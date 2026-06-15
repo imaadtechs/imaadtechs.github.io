@@ -36,7 +36,7 @@
       line-height: 1.6;
     }
 
-    /* Interactive Background Canvas */
+    /* Interactive Background Canvas - Glitch Fixed */
     #background-canvas {
       position: fixed;
       top: 0;
@@ -44,7 +44,9 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      pointer-events: all;
+      pointer-events: none;
+      touch-action: none; /* Prevents background canvas from hijacking native page scrolling */
+      will-change: transform; /* Forces hardware acceleration on mobile GPUs */
     }
 
     /* Header & Navigation */
@@ -185,7 +187,7 @@
     }
 
     .hero-content h1 {
-      font-size: clamp(36px, 6vw, 64px);
+      font-size: clamp(32px, 6vw, 64px);
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 16px;
@@ -201,7 +203,7 @@
       max-width: 600px;
       margin: 0 auto 36px auto;
       color: var(--color-text-muted);
-      font-size: clamp(16px, 2vw, 18px);
+      font-size: clamp(15px, 2vw, 18px);
     }
 
     .btn-container {
@@ -249,7 +251,7 @@
 
     /* Section Global Styles */
     .section {
-      padding: 100px 24px;
+      padding: 80px 24px;
       max-width: 1200px;
       margin: auto;
       position: relative;
@@ -257,11 +259,11 @@
 
     .title-wrapper {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 48px;
     }
 
     .section-title {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(26px, 4vw, 40px);
       font-weight: 700;
       position: relative;
       display: inline-block;
@@ -280,7 +282,7 @@
     /* Grid Layouts */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
@@ -290,7 +292,7 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      padding: 32px;
+      padding: 24px;
       border-radius: 16px;
       transition: var(--transition);
       position: relative;
@@ -309,17 +311,17 @@
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       border-color: rgba(0, 229, 255, 0.3);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.05);
     }
 
     .card-icon {
       color: var(--color-primary);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       background: rgba(0, 229, 255, 0.05);
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -328,14 +330,14 @@
     }
 
     .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
+      font-size: 18px;
+      margin-bottom: 8px;
       font-weight: 600;
     }
 
     .card p {
       color: var(--color-text-muted);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.6;
     }
 
@@ -348,7 +350,7 @@
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
     }
 
@@ -357,10 +359,10 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 100px;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--color-text-main);
       display: flex;
       align-items: center;
@@ -423,48 +425,21 @@
     }
 
     .contact-card .val {
-      font-size: 15px;
+      font-size: 14px;
+      word-break: break-all;
     }
 
-    .email {
-      background: rgba(22, 163, 74, 0.08);
-      border-color: rgba(22, 163, 74, 0.2);
-      color: #4ade80;
-    }
-    .email:hover {
-      background: rgba(22, 163, 74, 0.15);
-      box-shadow: 0 0 20px rgba(22, 163, 74, 0.15);
-    }
+    .email { background: rgba(22, 163, 74, 0.08); border-color: rgba(22, 163, 74, 0.2); color: #4ade80; }
+    .email:hover { background: rgba(22, 163, 74, 0.15); box-shadow: 0 0 20px rgba(22, 163, 74, 0.15); }
 
-    .phone {
-      background: rgba(37, 99, 235, 0.08);
-      border-color: rgba(37, 99, 235, 0.2);
-      color: #60a5fa;
-    }
-    .phone:hover {
-      background: rgba(37, 99, 235, 0.15);
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
-    }
+    .phone { background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.2); color: #60a5fa; }
+    .phone:hover { background: rgba(37, 99, 235, 0.15); box-shadow: 0 0 20px rgba(37, 99, 235, 0.15); }
 
-    .github {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: #f1f5f9;
-    }
-    .github:hover {
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
+    .github { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); color: #f1f5f9; }
+    .github:hover { background: rgba(255, 255, 255, 0.12); box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
 
-    .youtube {
-      background: rgba(220, 38, 38, 0.08);
-      border-color: rgba(220, 38, 38, 0.2);
-      color: #f87171;
-    }
-    .youtube:hover {
-      background: rgba(220, 38, 38, 0.15);
-      box-shadow: 0 0 20px rgba(220, 38, 38, 0.15);
-    }
+    .youtube { background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.2); color: #f87171; }
+    .youtube:hover { background: rgba(220, 38, 38, 0.15); box-shadow: 0 0 20px rgba(220, 38, 38, 0.15); }
 
     /* Footer */
     footer {
@@ -473,7 +448,7 @@
       background: rgba(15, 23, 42, 0.9);
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       color: var(--color-text-muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     footer p {
@@ -483,7 +458,7 @@
     .credit {
       font-family: var(--font-mono);
       color: var(--color-primary);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 2px;
     }
 
@@ -492,14 +467,14 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 56px;
-      height: 56px;
+      width: 50px;
+      height: 50px;
       border: 1px solid rgba(0, 229, 255, 0.3);
       border-radius: 50%;
       background: rgba(15, 23, 42, 0.85);
       color: var(--color-primary);
       font-family: var(--font-mono);
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 700;
       cursor: pointer;
       z-index: 999;
@@ -513,7 +488,7 @@
     }
 
     .hidden-btn:hover {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.05) rotate(5deg);
       box-shadow: 0 0 20px var(--color-primary);
       background: var(--color-primary);
       color: var(--bg-base);
@@ -525,12 +500,12 @@
       top: 0;
       right: -100%;
       width: 100%;
-      max-width: 460px;
+      max-width: 440px;
       height: 100%;
-      background: rgba(3, 7, 18, 0.97);
+      background: rgba(3, 7, 18, 0.98);
       border-left: 1px solid rgba(0, 229, 255, 0.2);
       box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
-      padding: 30px 24px;
+      padding: 24px;
       transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       overflow-y: auto;
       z-index: 2000;
@@ -553,7 +528,7 @@
 
     .lab-header h2 {
       font-family: var(--font-mono);
-      font-size: 18px;
+      font-size: 16px;
       color: var(--color-primary);
       display: flex;
       align-items: center;
@@ -565,11 +540,11 @@
       cursor: pointer;
       color: var(--color-text-muted);
       transition: var(--transition);
+      padding: 4px 12px;
     }
 
     .close:hover {
       color: var(--color-primary);
-      transform: rotate(90deg);
     }
 
     .lab-content p {
@@ -585,7 +560,6 @@
       border-radius: 12px;
       padding: 16px;
       margin-bottom: 24px;
-      box-shadow: inset 0 0 12px rgba(0, 229, 255, 0.05);
     }
 
     .jarvis-title {
@@ -616,7 +590,7 @@
     }
 
     .chat-log {
-      height: 220px;
+      height: 200px;
       overflow-y: auto;
       border: 1px solid rgba(255, 255, 255, 0.05);
       background: rgba(3, 7, 18, 0.5);
@@ -627,24 +601,13 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0, 229, 255, 0.2) transparent;
-    }
-
-    .chat-log::-webkit-scrollbar {
-      width: 4px;
-    }
-    .chat-log::-webkit-scrollbar-thumb {
-      background: rgba(0, 229, 255, 0.2);
-      border-radius: 2px;
     }
 
     .chat-msg {
-      max-width: 85%;
+      max-width: 90%;
       padding: 8px 12px;
       border-radius: 8px;
       line-height: 1.4;
-      font-family: var(--font-sans);
     }
 
     .chat-msg.system-greeting {
@@ -693,14 +656,11 @@
       padding: 10px 14px;
       color: var(--color-text-main);
       font-size: 13px;
-      font-family: var(--font-sans);
       outline: none;
-      transition: var(--transition);
     }
 
     .chat-input:focus {
       border-color: var(--color-primary);
-      box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
     }
 
     .chat-send-btn {
@@ -714,19 +674,6 @@
       justify-content: center;
       color: var(--bg-base);
       cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .chat-send-btn:hover {
-      background: #00b8cc;
-      transform: scale(1.05);
-    }
-
-    .chat-send-btn:disabled {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--color-text-muted);
-      cursor: not-allowed;
-      transform: none;
     }
 
     .chat-chips {
@@ -741,16 +688,9 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--color-text-muted);
       border-radius: 100px;
-      padding: 4px 10px;
+      padding: 6px 12px;
       font-size: 11px;
       cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .chat-chip:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      background: rgba(0, 229, 255, 0.03);
     }
 
     .embed-container {
@@ -795,14 +735,14 @@
       color: var(--color-primary);
     }
 
-    /* Backdrop overlay for active mobile/drawer menus */
+    /* Backdrop overlay */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 998;
       opacity: 0;
       pointer-events: none;
@@ -814,14 +754,12 @@
       pointer-events: all;
     }
 
-    /* Responsive Breakpoints */
-    @media (max-width: 992px) {
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-    }
-
+    /* Responsive Viewports */
     @media (max-width: 768px) {
+      header {
+        padding: 16px;
+      }
+
       .mobile-toggle {
         display: flex;
       }
@@ -831,15 +769,15 @@
         top: 0;
         right: -100%;
         width: 80%;
-        max-width: 320px;
+        max-width: 300px;
         height: 100vh;
-        background: rgba(15, 23, 42, 0.95);
+        background: rgba(15, 23, 42, 0.96);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 32px;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1005;
         border-left: 1px solid rgba(255, 255, 255, 0.05);
@@ -850,11 +788,15 @@
       }
 
       .nav-links li a {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       .hero {
         padding: 40px 16px;
+      }
+
+      .section {
+        padding: 60px 16px;
       }
     }
   </style>
@@ -862,7 +804,6 @@
 
 <body>
 
-  <!-- Dynamic Particle Canvas -->
   <canvas id="background-canvas"></canvas>
 
   <header>
@@ -886,7 +827,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="badge">
@@ -908,7 +848,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="section">
     <div class="title-wrapper">
       <h2 class="section-title">About Me</h2>
@@ -941,7 +880,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="title-wrapper">
       <h2 class="section-title">Featured Projects</h2>
@@ -982,7 +920,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="title-wrapper">
       <h2 class="section-title">Technology Stack</h2>
@@ -1003,7 +940,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="section">
     <div class="title-wrapper">
       <h2 class="section-title">Initiate Contact</h2>
@@ -1044,19 +980,15 @@
     </div>
   </section>
 
-  <!-- Interactive Overlay -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- Footer -->
   <footer>
     <p>© 2026 Imaad Danish | Next Level Engineering Solutions</p>
     <p class="credit">COGNITIVE ROBOTICS LABS</p>
   </footer>
 
-  <!-- Drawer Lab Trigger (The secret 67 key) -->
   <button class="hidden-btn" id="lab-trigger" aria-label="Open Hidden Laboratory">67</button>
 
-  <!-- Side Panel Lab Drawer -->
   <div class="lab" id="lab">
     <div class="lab-header">
       <h2>
@@ -1071,7 +1003,6 @@
         System Authorization Granted. Welcome to the classified experimental terminal. Custom modules and telemetry assets are loaded below.
       </p>
 
-      <!-- JARVIS Cyber AI Chat Interface Module -->
       <div class="jarvis-console">
         <div class="jarvis-title">
           <span class="jarvis-indicator"></span> JARVIS CORE AI v3.0
@@ -1136,7 +1067,6 @@
   </div>
 
   <script>
-    // Elements UI references
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.getElementById('nav-links');
     const labTrigger = document.getElementById('lab-trigger');
@@ -1145,7 +1075,6 @@
     const overlay = document.getElementById('overlay');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // 1. Mobile Menu Functionality
     function toggleMobileMenu() {
       mobileToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
@@ -1154,7 +1083,6 @@
 
     mobileToggle.addEventListener('click', toggleMobileMenu);
 
-    // Close mobile menu if link or overlay clicked
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         mobileToggle.classList.remove('active');
@@ -1170,7 +1098,6 @@
       overlay.classList.remove('active');
     });
 
-    // 2. Secret Lab Panel Drawers
     function openLab() {
       labDrawer.classList.add('open');
       overlay.classList.add('active');
@@ -1184,7 +1111,6 @@
     labTrigger.addEventListener('click', openLab);
     labClose.addEventListener('click', closeLab);
 
-    // Mock Live HUD dynamic telemetry counters
     setInterval(() => {
       const pingElement = document.getElementById('telemetry-ping');
       if (pingElement) {
@@ -1193,7 +1119,6 @@
       }
     }, 2000);
 
-    // Active Section Link Tracker
     window.addEventListener('scroll', () => {
       let scrollPosition = window.scrollY + 100;
       document.querySelectorAll('section').forEach(section => {
@@ -1208,12 +1133,10 @@
       });
     });
 
-    // 3. JARVIS Cyber Core Gemini Chat API Logic
     const chatLog = document.getElementById('chat-log');
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
 
-    // Handle Quick suggested queries from chips
     function quickQuery(text) {
       chatInput.value = text;
       handleSendMessage();
@@ -1230,32 +1153,42 @@
       const messageText = chatInput.value.trim();
       if (!messageText) return;
 
-      // Render user message bubble
       appendMessage(messageText, 'user');
       chatInput.value = '';
-      chatInput.focus();
 
-      // Disable buttons during generation cycle
       chatInput.disabled = true;
       chatSendBtn.disabled = true;
 
-      // Add thinking/loading bubble
       const loadingBubble = appendMessage('Consulting cognitive processors...', 'ai system-greeting');
 
+      // Glitch Fixed: Added validation mechanism to handle missing API credentials gracefully
+      const apiKey = ""; 
+      if (!apiKey) {
+        setTimeout(() => {
+          loadingBubble.remove();
+          appendMessage("Hello! I am JARVIS. To link my consciousness directly to live AI processors, please insert a valid Gemini API key inside the script source code configuration.", "ai");
+          resetChatControls();
+        }, 800);
+        return;
+      }
+
       try {
-        const responseText = await callGeminiAPI(messageText);
-        // Remove loading bubble and append actual response
+        const responseText = await callGeminiAPI(messageText, apiKey);
         loadingBubble.remove();
         appendMessage(responseText, 'ai');
       } catch (error) {
         loadingBubble.remove();
         appendMessage('Connection Error: Cognitive link failed to respond.', 'error');
-        console.error('Gemini call failure:', error);
       } finally {
-        chatInput.disabled = false;
-        chatSendBtn.disabled = false;
-        chatLog.scrollTop = chatLog.scrollHeight;
+        resetChatControls();
       }
+    }
+
+    function resetChatControls() {
+      chatInput.disabled = false;
+      chatSendBtn.disabled = false;
+      chatInput.focus();
+      chatLog.scrollTop = chatLog.scrollHeight;
     }
 
     function appendMessage(text, className) {
@@ -1267,67 +1200,50 @@
       return bubble;
     }
 
-    async function callGeminiAPI(userQuery) {
-      // Prompt engineered background context explaining Imaad's profile to JARVIS
+    async function callGeminiAPI(userQuery, apiKey) {
       const systemPrompt = `You are JARVIS, an advanced AI Assistant built directly by Imaad Danish. 
-      Your tone is sophisticated, slightly futuristic (like Iron Man's JARVIS) but highly professional, helpful, and polite. 
-      You are representing Imaad Danish to visitors on his portfolio page. Answer questions using the following facts:
-      - Imaad is a highly skilled Robotics & AI Engineer.
-      - Core competencies: Robotics (ROS, pathfinding), Artificial Intelligence, Machine Learning, Computer Vision, and System Integration (IoT, edge electronics).
-      - Core Stack: ROS, Python, C++, TensorFlow, OpenCV, Arduino, ESP32, Raspberry Pi, MQTT.
-      - Featured Projects:
-        1. Autonomous Navigation: A mobile robot driven by LiDAR & sonar using active ROS loops.
-        2. Computer Vision Pipeline: Real-time segmentation & pose estimation running locally on embedded hardware.
-        3. AI Assistant Integration: A smart voice agent automating localized home IoT hardware.
-        4. Industrial IoT Cloud: Real-time telemetry forecasting dashboard.
-      - Contact points: Email (imaad.danish003@gmail.com), WhatsApp (+91 9997554431), GitHub (imaadwork), YouTube channel (@lumorixvfxofficial).
-      Keep your responses extremely concise (under 3-4 sentences), informative, and maintain the sci-fi JARVIS persona.`;
+      Your tone is sophisticated, slightly futuristic but highly professional and polite. 
+      Answer questions concisely (under 3-4 sentences) using these facts:
+      - Imaad is a Robotics & AI Engineer.
+      - Stack: ROS, Python, C++, TensorFlow, OpenCV, Arduino, ESP32, Raspberry Pi, MQTT.
+      - Projects: Autonomous Navigation (LiDAR/ROS), CV Pipeline (Edge hardware), AI Voice Assistant (IoT automation), Industrial Cloud Dashboard.
+      - Contacts: Email (imaad.danish003@gmail.com), WhatsApp (+91 9997554431), GitHub (imaadwork), YouTube (@lumorixvfxofficial).`;
 
-      const apiKey = ""; // Left empty so Canvas automatically resolves/injects the valid API key at runtime
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
       const payload = {
         contents: [{ parts: [{ text: userQuery }] }],
-        systemInstruction: {
-          parts: [{ text: systemPrompt }]
-        }
+        systemInstruction: { parts: [{ text: systemPrompt }] }
       };
 
-      // Implement exponential backoff for resilience
       let delay = 1000;
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
           const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
 
           if (response.status === 429) {
-            // Throttled: wait and retry
             await new Promise(resolve => setTimeout(resolve, delay));
             delay *= 2;
             continue;
           }
 
-          if (!response.ok) {
-            throw new Error(`API error (Status ${response.status})`);
-          }
+          if (!response.ok) throw new Error('API Error');
 
           const result = await response.json();
-          const answer = result.candidates?.[0]?.content?.parts?.[0]?.text;
-          return answer || "No transmission received. Core terminal standby.";
+          return result.candidates?.[0]?.content?.parts?.[0]?.text || "No transmission received.";
         } catch (error) {
-          if (attempt === 2) throw error; // Re-throw error on last attempt
+          if (attempt === 2) throw error;
           await new Promise(resolve => setTimeout(resolve, delay));
           delay *= 2;
         }
       }
     }
 
-    // 4. Interactive WebGL/Canvas Background particles
+    /* Optimized Canvas Particle Engine for Touch Screen Viewports */
     const canvas = document.getElementById('background-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -1349,9 +1265,9 @@
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.radius = Math.random() * 2 + 1;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.radius = Math.random() * 1.5 + 1;
       }
 
       update() {
@@ -1365,15 +1281,17 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 229, 255, 0.4)';
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.3)';
         ctx.fill();
       }
     }
 
     function initParticles() {
       particles = [];
-      const density = Math.floor((width * height) / 15000);
-      const count = Math.min(Math.max(density, 30), 100);
+      const density = Math.floor((width * height) / 20000);
+      // Glitch Fixed: Reduced particle limit dynamically on small screens to lower core temperatures on mobile CPUs
+      const maxParticles = width < 768 ? 25 : 60;
+      const count = Math.min(Math.max(density, 15), maxParticles);
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
@@ -1392,6 +1310,18 @@
         mouseX = e.touches[0].clientX;
         mouseY = e.touches[0].clientY;
       }
+    }, { passive: true });
+
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 0) {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      mouseX = null;
+      mouseY = null;
     });
 
     window.addEventListener('mouseleave', () => {
@@ -1407,35 +1337,34 @@
         p.draw();
       });
 
-      // Render connected lines (Constellation Node Structure)
+      const maxDist = width < 768 ? 70 : 120; // Glitch Fixed: Shorter vector lines on mobile viewports saves GPU fill rate
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 120) {
+          if (dist < maxDist) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 229, 255, ${0.15 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(0, 229, 255, ${0.12 * (1 - dist / maxDist)})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
 
-        // Connect with cursor
         if (mouseX !== null && mouseY !== null) {
           const dx = particles[i].x - mouseX;
           const dy = particles[i].y - mouseY;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 150) {
+          if (dist < maxDist) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouseX, mouseY);
-            ctx.strokeStyle = `rgba(0, 229, 255, ${0.3 * (1 - dist / 150)})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(0, 229, 255, ${0.25 * (1 - dist / maxDist)})`;
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
