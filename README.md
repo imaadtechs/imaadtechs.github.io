@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,17 +9,13 @@
   
   <style>
     :root {
-      /* Rebalanced dark color tokens to ensure excellent contrast with white text */
-      --bg-base: #0b0f19;
-      --bg-surface: #1e293b;
-      --bg-surface-accent: #334155;
+      --bg-base: #030712;
+      --bg-surface: #0f172a;
+      --bg-surface-accent: #1e293b;
       --color-primary: #00e5ff;
       --color-primary-glow: rgba(0, 229, 255, 0.15);
-      
-      /* Global text colors forced to light default values */
-      --color-text-main: #ffffff;
-      --color-text-muted: #cbd5e1;
-      
+      --color-text-main: #f8fafc;
+      --color-text-muted: #94a3b8;
       --color-accent: #3b82f6;
       --font-sans: 'Poppins', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -34,7 +31,7 @@
     html, body {
       width: 100%;
       height: 100%;
-      background: #020617; /* Backdrop wrapper behind the phone window on desktop views */
+      background: #090d16; /* Deep structural back-drop for desktop viewport setups */
       font-family: var(--font-sans);
       line-height: 1.6;
       overflow: hidden;
@@ -43,30 +40,31 @@
       align-items: center;
     }
 
-    /* --- Mobile Frame Wrapper (Locks layout format to phone viewports) --- */
+    /* --- The Mobile Phone Simulator Frame --- */
     .phone-viewport {
       width: 100%;
-      max-width: 420px;
+      max-width: 420px; /* Lock standard smartphone aspect width ratio */
       height: 100vh;
       background: var(--bg-base);
       position: relative;
       overflow-y: auto;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      box-shadow: 0 0 60px rgba(0, 229, 255, 0.1), 0 25px 70px rgba(0, 0, 0, 0.8);
-      border-left: 1px solid rgba(255, 255, 255, 0.05);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 60px rgba(0, 229, 255, 0.07), 0 25px 70px rgba(0, 0, 0, 0.7);
+      border-left: 1px solid rgba(0, 229, 255, 0.05);
+      border-right: 1px solid rgba(0, 229, 255, 0.05);
     }
 
+    /* Clean Custom UI Scrollbar for Mobile Frame Window */
     .phone-viewport::-webkit-scrollbar {
       width: 4px;
     }
     .phone-viewport::-webkit-scrollbar-thumb {
-      background: rgba(0, 229, 255, 0.3);
+      background: rgba(0, 229, 255, 0.15);
       border-radius: 10px;
     }
 
-    /* Background Particle Engine Canvas */
+    /* Interactive Background Canvas (Bound inside phone borders) */
     #background-canvas {
       position: absolute;
       top: 0;
@@ -79,22 +77,23 @@
       will-change: transform;
     }
 
+    /* Wrap contents cleanly above the system canvas layer */
     .app-content {
       position: relative;
       z-index: 2;
       width: 100%;
     }
 
-    /* Header Navigation bar styling */
+    /* Header & Navigation */
     header {
-      background: rgba(30, 41, 59, 0.9);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 16px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     nav {
@@ -116,7 +115,7 @@
       font-family: var(--font-mono);
     }
 
-    /* Mobile Slide-Out Drawer Links */
+    /* Mobile Drawer Layout Style Menu Links */
     .nav-links {
       position: fixed;
       top: 0;
@@ -124,7 +123,7 @@
       width: 75%;
       max-width: 300px;
       height: 100vh;
-      background: rgba(15, 23, 42, 0.98);
+      background: rgba(15, 23, 42, 0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       display: flex;
@@ -135,7 +134,7 @@
       list-style: none;
       transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 1005;
-      border-left: 1px solid rgba(0, 229, 255, 0.15);
+      border-left: 1px solid rgba(0, 229, 255, 0.1);
     }
 
     .nav-links.active {
@@ -143,11 +142,12 @@
     }
 
     .nav-links li a {
-      color: var(--color-text-main); /* Shifted menu items to bright white */
+      color: var(--color-text-muted);
       text-decoration: none;
       font-size: 16px;
       font-weight: 500;
       transition: var(--transition);
+      position: relative;
     }
 
     .nav-links li a:hover,
@@ -155,7 +155,7 @@
       color: var(--color-primary);
     }
 
-    /* Hamburger Menu Button Lines */
+    /* Mobile Drawer Toggle Control Structure */
     .mobile-toggle {
       display: flex;
       flex-direction: column;
@@ -188,7 +188,7 @@
       transform: rotate(-45deg);
     }
 
-    /* Hero Section */
+    /* Hero Layout Section */
     .hero {
       min-height: calc(100vh - 60px);
       display: flex;
@@ -208,8 +208,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(0, 229, 255, 0.12);
-      border: 1px solid rgba(0, 229, 255, 0.4);
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.25);
       color: var(--color-primary);
       padding: 6px 14px;
       border-radius: 100px;
@@ -226,7 +226,6 @@
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 16px;
-      color: var(--color-text-main); /* Replaced potential black header states */
     }
 
     .hero-content h1 span {
@@ -265,17 +264,17 @@
 
     .btn.primary {
       background: var(--color-primary);
-      color: #030712; /* Text inside the primary button kept dark for readable clarity */
+      color: var(--bg-base);
       box-shadow: 0 4px 20px var(--color-primary-glow);
     }
 
     .btn.secondary {
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.02);
       color: var(--color-text-main);
     }
 
-    /* Section Component Containers */
+    /* Section Global Styles */
     .section {
       padding: 50px 20px;
       width: 100%;
@@ -290,7 +289,6 @@
     .section-title {
       font-size: 24px;
       font-weight: 700;
-      color: var(--color-text-main);
       position: relative;
       display: inline-block;
     }
@@ -305,7 +303,7 @@
       border-radius: 2px;
     }
 
-    /* Flex Blocks to stack perfectly inside narrow phone viewport lines */
+    /* Mobile Only Column System Grid Configuration */
     .grid {
       display: flex;
       flex-direction: column;
@@ -313,10 +311,10 @@
       width: 100%;
     }
 
-    /* High contrast UI Cards */
+    /* Card Designs */
     .card {
-      background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       padding: 20px;
@@ -332,28 +330,27 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.06), transparent 50%);
+      background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.04), transparent 50%);
       pointer-events: none;
     }
 
     .card-icon {
       color: var(--color-primary);
       margin-bottom: 12px;
-      background: rgba(0, 229, 255, 0.1);
+      background: rgba(0, 229, 255, 0.05);
       width: 42px;
       height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 10px;
-      border: 1px solid rgba(0, 229, 255, 0.3);
+      border: 1px solid rgba(0, 229, 255, 0.15);
     }
 
     .card h3 {
       font-size: 16px;
       margin-bottom: 6px;
       font-weight: 600;
-      color: var(--color-text-main);
     }
 
     .card p {
@@ -362,7 +359,7 @@
       line-height: 1.5;
     }
 
-    /* Skills Configuration */
+    /* Skills Cloud Setup */
     .skills-wrapper {
       width: 100%;
     }
@@ -375,8 +372,8 @@
     }
 
     .skill {
-      background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       padding: 8px 14px;
       border-radius: 100px;
       font-weight: 500;
@@ -395,7 +392,7 @@
       box-shadow: 0 0 6px var(--color-primary);
     }
 
-    /* Contact Block Links */
+    /* Contact Links Section */
     .contact {
       display: flex;
       flex-direction: column;
@@ -412,6 +409,9 @@
       text-decoration: none;
       font-weight: 600;
       border: 1px solid transparent;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     .contact-card svg {
@@ -430,8 +430,7 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: var(--color-text-main);
-      opacity: 0.8;
+      opacity: 0.7;
     }
 
     .contact-card .val {
@@ -439,21 +438,19 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: var(--color-text-main);
     }
 
-    /* Enhanced brightness matrices on contact blocks for optimized contrast matching */
-    .email { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.4); color: #4ade80; }
-    .phone { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa; }
-    .github { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.25); color: #f1f5f9; }
-    .youtube { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
+    .email { background: rgba(22, 163, 74, 0.08); border-color: rgba(22, 163, 74, 0.2); color: #4ade80; }
+    .phone { background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.2); color: #60a5fa; }
+    .github { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); color: #f1f5f9; }
+    .youtube { background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.2); color: #f87171; }
 
-    /* Footer structure design */
+    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
-      background: var(--bg-surface);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
       color: var(--color-text-muted);
       font-size: 12px;
     }
@@ -469,23 +466,23 @@
       letter-spacing: 1.5px;
     }
 
-    /* Lab Engine Panel Floating Controller Trigger */
+    /* Hidden Lab Floating Controller Button Trigger */
     .hidden-btn {
       position: absolute;
       bottom: 20px;
       right: 20px;
       width: 46px;
       height: 46px;
-      border: 1px solid rgba(0, 229, 255, 0.5);
+      border: 1px solid rgba(0, 229, 255, 0.3);
       border-radius: 50%;
-      background: var(--bg-surface);
+      background: rgba(15, 23, 42, 0.9);
       color: var(--color-primary);
       font-family: var(--font-mono);
       font-size: 13px;
       font-weight: 700;
       cursor: pointer;
       z-index: 999;
-      box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -493,15 +490,15 @@
       -webkit-backdrop-filter: blur(8px);
     }
 
-    /* Lab Slide Panel Drawer Overlay System */
+    /* Lab Engine Panel Styling Overlay Setup */
     .lab {
       position: absolute;
       top: 0;
       right: -100%;
       width: 100%;
       height: 100%;
-      background: rgba(11, 15, 25, 0.99);
-      border-left: 1px solid rgba(0, 229, 255, 0.3);
+      background: rgba(3, 7, 18, 0.99);
+      border-left: 1px solid rgba(0, 229, 255, 0.2);
       padding: 20px;
       transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       overflow-y: auto;
@@ -518,7 +515,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+      border-bottom: 1px solid rgba(0, 229, 255, 0.15);
       padding-bottom: 12px;
       margin-bottom: 16px;
     }
@@ -535,7 +532,7 @@
     .close {
       font-size: 26px;
       cursor: pointer;
-      color: var(--color-text-main);
+      color: var(--color-text-muted);
       padding: 2px 8px;
     }
 
@@ -545,10 +542,10 @@
       margin-bottom: 16px;
     }
 
-    /* JARVIS AI Module Layout */
+    /* JARVIS AI Module Interface */
     .jarvis-console {
-      background: var(--bg-surface);
-      border: 1px solid rgba(0, 229, 255, 0.3);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(0, 229, 255, 0.25);
       border-radius: 12px;
       padding: 14px;
       margin-bottom: 20px;
@@ -584,8 +581,8 @@
     .chat-log {
       height: 180px;
       overflow-y: auto;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(11, 15, 25, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(3, 7, 18, 0.6);
       border-radius: 8px;
       padding: 10px;
       margin-bottom: 10px;
@@ -595,11 +592,12 @@
       gap: 10px;
     }
 
+    /* Scrollbar for chat log viewport inside panel */
     .chat-log::-webkit-scrollbar {
       width: 3px;
     }
     .chat-log::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .chat-msg {
@@ -607,13 +605,12 @@
       padding: 6px 10px;
       border-radius: 8px;
       line-height: 1.4;
-      color: var(--color-text-main);
     }
 
     .chat-msg.system-greeting {
-      background: rgba(0, 229, 255, 0.08);
+      background: rgba(0, 229, 255, 0.04);
       color: var(--color-primary);
-      border: 1px solid rgba(0, 229, 255, 0.2);
+      border: 1px solid rgba(0, 229, 255, 0.1);
       align-self: flex-start;
       font-family: var(--font-mono);
       font-size: 11px;
@@ -621,12 +618,16 @@
 
     .chat-msg.user {
       background: var(--bg-surface-accent);
+      color: var(--color-text-main);
+      align-self: flex-end;
       border-bottom-right-radius: 2px;
     }
 
     .chat-msg.ai {
-      background: rgba(59, 130, 246, 0.2);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--color-text-main);
+      align-self: flex-start;
+      border: 1px solid rgba(59, 130, 246, 0.15);
       border-bottom-left-radius: 2px;
     }
 
@@ -637,8 +638,8 @@
 
     .chat-input {
       flex: 1;
-      background: rgba(11, 15, 25, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(3, 7, 18, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       padding: 8px 12px;
       color: var(--color-text-main);
@@ -659,7 +660,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #0b0f19;
+      color: var(--bg-base);
       cursor: pointer;
     }
 
@@ -671,19 +672,19 @@
     }
 
     .chat-chip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: var(--color-text-main);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--color-text-muted);
       border-radius: 100px;
       padding: 4px 10px;
       font-size: 10px;
       cursor: pointer;
     }
 
-    /* Cyber HUD Data Analytics Row info block graphics */
+    /* Cyber Hud Info Graphic */
     .lab-hud {
-      background: rgba(30, 41, 59, 0.4);
-      border: 1px dashed rgba(0, 229, 255, 0.3);
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px dashed rgba(0, 229, 255, 0.2);
       border-radius: 10px;
       padding: 12px;
       margin-bottom: 20px;
@@ -972,7 +973,7 @@
   </div>
 
   <script>
-    // --- Canvas Particle Animation Logic Loop ---
+    // --- Responsive Contained Canvas Logic Loop ---
     const canvas = document.getElementById('background-canvas');
     const ctx = canvas.getContext('2d');
     const container = document.getElementById('scroll-frame');
@@ -1028,7 +1029,7 @@
     }
     animate();
 
-    // --- Navigation UI Controls Menu Toggle ---
+    // --- Core Navigation UI Controls ---
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.getElementById('nav-links');
     const overlay = document.getElementById('overlay');
@@ -1046,7 +1047,7 @@
     });
     navItems.forEach(item => item.addEventListener('click', toggleMenu));
 
-    // --- Laboratory Toggle Panels ---
+    // --- Laboratory Drawer Functionality ---
     const labTrigger = document.getElementById('lab-trigger');
     const labPanel = document.getElementById('lab');
     const labClose = document.getElementById('lab-close');
@@ -1058,7 +1059,7 @@
       labPanel.classList.remove('open');
     });
 
-    // --- JARVIS Intelligence Terminal Logic Module ---
+    // --- JARVIS Simulator Terminal Functionality ---
     const chatLog = document.getElementById('chat-log');
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
@@ -1073,6 +1074,7 @@
     function triggerAIMessage(text) {
       if(!text.trim()) return;
       
+      // User Message Appending
       const userMsg = document.createElement('div');
       userMsg.className = 'chat-msg user';
       userMsg.textContent = text;
@@ -1081,6 +1083,7 @@
       
       chatInput.value = '';
 
+      // Simulated Intelligent Logic Response Matrix
       setTimeout(() => {
         const aiMsg = document.createElement('div');
         aiMsg.className = 'chat-msg ai';
@@ -1110,3 +1113,5 @@
       triggerAIMessage(chipText);
     }
   </script>
+</body>
+</html>
