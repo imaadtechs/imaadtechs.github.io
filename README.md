@@ -45,8 +45,7 @@
     }
 
     /* --- Mobile Frame Wrapper --- */
-    .phone-viewport
-    .window-viewport {
+    .phone-viewport {
       width: 100%;
       max-width: 420px;
       height: 100vh;
