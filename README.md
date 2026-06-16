@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Imaad Danish | Robotics & AI Engineer</title>
+  
+  <meta name="title" content="Imaad Danish | Robotics & AI Engineer">
+  <meta name="description" content="Portfolio of Imaad Danish. Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
+  <meta name="keywords" content="Imaad Danish, Robotics, AI Engineer, Machine Learning, Computer Vision, ROS, Embedded Systems, IoT, Automation">
+  <meta name="author" content="Imaad Danish">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="Imaad Danish | Robotics & AI Engineer">
+  <meta property="og:description" content="Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
+  <meta property="og:image" content="https://yourdomain.com/images/portfolio-preview.jpg">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourdomain.com/">
+  <meta property="twitter:title" content="Imaad Danish | Robotics & AI Engineer">
+  <meta property="twitter:description" content="Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
+  <meta property="twitter:image" content="https://yourdomain.com/images/portfolio-preview.jpg">
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Rebalanced dark color tokens to ensure excellent contrast with white text */
       --bg-base: #0b0f19;
       --bg-surface: #1e293b;
       --bg-surface-accent: #334155;
       --color-primary: #00e5ff;
       --color-primary-glow: rgba(0, 229, 255, 0.15);
-      
-      /* Global text colors strictly forced to clean light/white values */
       --color-text-main: #ffffff;
       --color-text-muted: #cbd5e1;
-      
       --color-accent: #3b82f6;
       --font-sans: 'Poppins', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -32,10 +46,11 @@
       box-sizing: border-box;
     }
 
+    /* --- BASE LAYOUT RULES FOR LARGE SCREENS (Desktop, Laptop, MacBook) --- */
     html, body {
       width: 100%;
       height: 100%;
-      background: #020617; /* Backdrop wrapper behind the phone window on desktop views */
+      background: #020617; 
       font-family: var(--font-sans);
       line-height: 1.6;
       overflow: hidden;
@@ -44,19 +59,89 @@
       align-items: center;
     }
 
-    /* --- Mobile Frame Wrapper --- */
-    .phone-viewport {
+    /* --- Desktop Only Simulated Operating System Window Wrapper --- */
+    .window-viewport {
       width: 100%;
       max-width: 420px;
-      height: 100vh;
+      height: 95vh;
       background: var(--bg-base);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 229, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+    }
+
+    .window-header {
+      background: #111827;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .window-dot.red { background: #ef4444; }
+    .window-dot.yellow { background: #eab308; }
+    .window-dot.green { background: #22c55e; }
+
+    .window-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgba(0, 229, 255, 0.6);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* --- Content Viewport Box --- */
+    .phone-viewport {
+      width: 100%;
+      flex: 1;
       position: relative;
       overflow-y: auto;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      box-shadow: 0 0 60px rgba(0, 229, 255, 0.1), 0 25px 70px rgba(0, 0, 0, 0.8);
-      border-left: 1px solid rgba(255, 255, 255, 0.05);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* --- MOBILE PHONES OVERRIDE MEDIA QUERY --- */
+    @media (max-width: 500px) {
+      html, body {
+        overflow: auto; 
+        display: block; 
+        background: var(--bg-base); 
+      }
+      .window-viewport {
+        max-width: 100%;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        display: block;
+      }
+      .window-header {
+        display: none; /* Desktop shell hidden on true mobile ports */
+      }
+      .phone-viewport {
+        height: auto; 
+        overflow-y: visible;
+      }
     }
 
     .phone-viewport::-webkit-scrollbar {
@@ -144,7 +229,7 @@
     }
 
     .nav-links li a {
-      color: var(--color-text-main); /* Menu links changed to crisp white */
+      color: var(--color-text-main); 
       text-decoration: none;
       font-size: 16px;
       font-weight: 500;
@@ -177,27 +262,25 @@
       transform-origin: left;
     }
 
-    .mobile-toggle.active span:nth-child(1) {
-      transform: rotate(45deg);
-    }
-
-    .mobile-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg);
-    }
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(2px, 1px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(2px, -1px); }
 
     /* Hero Section */
     .hero {
-      min-height: calc(100vh - 60px);
+      min-height: calc(100vh - 120px);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 40px 20px;
       position: relative;
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        min-height: 85vh;
+      }
     }
 
     .hero-content {
@@ -227,7 +310,7 @@
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 16px;
-      color: var(--color-text-main); /* Forced hero header to solid white */
+      color: var(--color-text-main); 
     }
 
     .hero-content h1 span {
@@ -266,7 +349,7 @@
 
     .btn.primary {
       background: var(--color-primary);
-      color: #ffffff; /* Explicitly changed action text inside the primary button to white */
+      color: #0b0f19; 
       box-shadow: 0 4px 20px var(--color-primary-glow);
     }
 
@@ -306,7 +389,6 @@
       border-radius: 2px;
     }
 
-    /* Flex Blocks to stack perfectly inside narrow phone viewport lines */
     .grid {
       display: flex;
       flex-direction: column;
@@ -443,13 +525,11 @@
       color: var(--color-text-main);
     }
 
-    /* High-vibrancy matrices on social components for pristine dark-mode readability */
     .email { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.4); color: #4ade80; }
     .phone { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa; }
     .github { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.25); color: #f1f5f9; }
     .youtube { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
 
-    /* Footer structure design */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -623,12 +703,14 @@
     .chat-msg.user {
       background: var(--bg-surface-accent);
       border-bottom-right-radius: 2px;
+      align-self: flex-end;
     }
 
     .chat-msg.ai {
       background: rgba(59, 130, 246, 0.2);
       border: 1px solid rgba(59, 130, 246, 0.3);
       border-bottom-left-radius: 2px;
+      align-self: flex-start;
     }
 
     .chat-input-row {
@@ -660,7 +742,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff; /* Changed console submit arrow text glyph to white */
+      color: #0b0f19;
       cursor: pointer;
     }
 
@@ -728,388 +810,380 @@
 </head>
 <body>
 
-  <div class="phone-viewport" id="scroll-frame">
-    
-    <canvas id="background-canvas"></canvas>
-
-    <div class="app-content">
-      <header>
-        <nav>
-          <div class="logo">
-            IMAAD<span>DANISH</span>
-          </div>
-
-          <ul class="nav-links" id="nav-links">
-            <li><a href="#about" class="nav-item">About</a></li>
-            <li><a href="#projects" class="nav-item">Projects</a></li>
-            <li><a href="#skills" class="nav-item">Skills</a></li>
-            <li><a href="#contact" class="nav-item">Contact</a></li>
-          </ul>
-
-          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-      </header>
-
-      <section class="hero">
-        <div class="hero-content">
-          <div class="badge">
-            <span class="skill-dot"></span> System Online // v2026.1
-          </div>
-          <h1>Hi, I'm <span>Imaad Danish</span></h1>
-          <p>
-            Building next-generation Robotics, Artificial Intelligence, 
-            Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.
-          </p>
-
-          <div class="btn-container">
-            <a href="#projects" class="btn primary">
-              Explore Projects
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="#contact" class="btn secondary">Contact Me</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="title-wrapper">
-          <h2 class="section-title">About Me</h2>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3>AI Development</h3>
-            <p>Developing robust architectural neural layers, custom computer vision pipelines, and production-ready machine learning solutions.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9"></path><path d="M8 5h8"></path></svg>
-            </div>
-            <h3>Robotics Engineering</h3>
-            <p>Designing intelligent robotic machinery, implementing sensor fusion techniques, navigation protocols, and dynamic spatial pathfinding.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"></path><path d="M6 21a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v12a3 3 0 0 0 3 3z"></path></svg>
-            </div>
-            <h3>System Integration</h3>
-            <p>Harmonizing high-performance microchips (Raspberry Pi/STM32) with IoT architecture to create scalable smart ecosystem solutions.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="title-wrapper">
-          <h2 class="section-title">Featured Projects</h2>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-            </div>
-            <h3>Autonomous Navigation</h3>
-            <p>Advanced autonomous mobile obstacle evasion robot driven by LiDAR, sonar telemetry, and reactive ROS processing loops.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            </div>
-            <h3>Computer Vision Pipeline</h3>
-            <p>Real-time Object Detection, semantic segmentation and pose estimation executing locally on embedded edge accelerators.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-            </div>
-            <h3>AI Assistant Integration</h3>
-            <p>A smart localized LLM assistant that accepts complex voice telemetry commands, orchestrating home IoT tasks.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-            </div>
-            <h3>Industrial IoT Cloud</h3>
-            <p>A high-speed dashboard delivering telemetry tracking, real-time analytics, and failure forecasting for robotic mechanisms.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="title-wrapper">
-          <h2 class="section-title">Technology Stack</h2>
-        </div>
-
-        <div class="skills-wrapper">
-          <div class="skills">
-            <div class="skill"><span class="skill-dot"></span> Robotics (ROS)</div>
-            <div class="skill"><span class="skill-dot"></span> Artificial Intelligence</div>
-            <div class="skill"><span class="skill-dot"></span> Machine Learning</div>
-            <div class="skill"><span class="skill-dot"></span> Computer Vision</div>
-            <div class="skill"><span class="skill-dot"></span> Python</div>
-            <div class="skill"><span class="skill-dot"></span> C++</div>
-            <div class="skill"><span class="skill-dot"></span> Arduino / ESP32</div>
-            <div class="skill"><span class="skill-dot"></span> Raspberry Pi</div>
-            <div class="skill"><span class="skill-dot"></span> IoT Protocol (MQTT/HTTP)</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="title-wrapper">
-          <h2 class="section-title">Initiate Contact</h2>
-        </div>
-
-        <div class="contact">
-          <a class="contact-card email" href="mailto:imaad.danish003@gmail.com">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <div class="info">
-              <span class="label">Email Secure Direct</span>
-              <span class="val">imaad.danish003@gmail.com</span>
-            </div>
-          </a>
-
-          <a class="contact-card phone" href="https://wa.me/919997554431" target="_blank" rel="noopener noreferrer">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.415 1.258 4.864l-1.282 4.773 4.887-1.282c1.398.761 2.99 1.192 4.673 1.192 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.567 12.853c-.198.555-1.168 1.085-1.611 1.144-.431.059-.988.086-2.914-.682-2.463-.981-4.041-3.486-4.164-3.652-.123-.166-.997-1.328-.997-2.533 0-1.206.63-1.796.852-2.043.222-.247.494-.309.658-.309.164 0 .329.002.472.008.148.006.347-.057.545.419.202.489.691 1.688.751 1.811.06.123.1.267.018.431-.082.164-.123.267-.247.411-.123.144-.26.321-.37.431-.123.123-.251.257-.107.502.144.243.639 1.053 1.372 1.706.942.84 1.734 1.101 1.981 1.225.247.123.391.103.535-.062.144-.165.617-.721.782-.968.165-.247.329-.206.555-.123.226.082 1.44.68 1.688.803.247.123.411.185.473.288.061.103.061.597-.137 1.152z"/></svg>
-            <div class="info">
-              <span class="label">WhatsApp Direct Secure</span>
-              <span class="val">+91 9997554431</span>
-            </div>
-          </a>
-
-          <a class="contact-card github" href="https://github.com/imaadtechs" target="_blank" rel="noopener noreferrer">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            <div class="info">
-              <span class="label">Developer Hub</span>
-              <span class="val">github.com/imaadtechs</span>
-            </div>
-          </a>
-
-          <a class="contact-card youtube" href="https://youtube.com/@lumorixvfxofficial" target="_blank" rel="noopener noreferrer">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            <div class="info">
-              <span class="label">VFX & Engineering Broadcast</span>
-              <span class="val">youtube.com/@lumorixvfxofficial</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <footer>
-        <p>© 2026 Imaad Danish | Next Level Engineering Solutions</p>
-        <p class="credit">COGNITIVE ROBOTICS LABS</p>
-      </footer>
+  <div class="window-viewport">
+    <div class="window-header">
+      <div class="window-dots">
+        <span class="window-dot red"></span>
+        <span class="window-dot yellow"></span>
+        <span class="window-dot green"></span>
+      </div>
+      <div class="window-title">COGNITIVE_OS_v2026.1</div>
     </div>
 
-    <div class="overlay" id="overlay"></div>
+    <div class="phone-viewport" id="scroll-frame">
+      
+      <canvas id="background-canvas"></canvas>
 
-    <button class="hidden-btn" id="lab-trigger" aria-label="Open Hidden Laboratory">67</button>
-
-    <div class="lab" id="lab">
-      <div class="lab-header">
-        <h2>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary)"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-          LABORATORIA // 67
-        </h2>
-        <div class="close" id="lab-close">×</div>
-      </div>
-
-      <div class="lab-content">
-        <p>
-          System Authorization Granted. Welcome to the classified experimental terminal. Custom modules and telemetry assets are loaded below.
-        </p>
-
-        <div class="jarvis-console">
-          <div class="jarvis-title">
-            <span class="jarvis-indicator"></span> JARVIS CORE AI v3.0
-          </div>
-          <div class="chat-log" id="chat-log">
-            <div class="chat-msg system-greeting">
-              [SYS_INIT] Connection established. Ask me anything about Imaad's robotics credentials, AI systems, projects, or how to contact him.
+      <div class="app-content">
+        <header>
+          <nav>
+            <div class="logo">
+              IMAAD<span>DANISH</span>
             </div>
-          </div>
-          <div class="chat-input-row">
-            <input type="text" id="chat-input" class="chat-input" placeholder="Initiate query..." autocomplete="off">
-            <button id="chat-send-btn" class="chat-send-btn" aria-label="Send Query">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+
+            <ul class="nav-links" id="nav-links">
+              <li><a href="#about" class="nav-item">About</a></li>
+              <li><a href="#projects" class="nav-item">Projects</a></li>
+              <li><a href="#skills" class="nav-item">Skills</a></li>
+              <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
-          </div>
-          <div class="chat-chips">
-            <button class="chat-chip" onclick="quickQuery('Tell me about your ROS and robotics background')">Robotics Stack</button>
-            <button class="chat-chip" onclick="quickQuery('What AI projects have you built?')">AI Projects</button>
-            <button class="chat-chip" onclick="quickQuery('How can I contact or hire Imaad?')">Get in Touch</button>
-          </div>
-        </div>
+          </nav>
+        </header>
 
-        <div class="lab-hud">
-          <div class="hud-row">
-            <span class="hud-label">COGNITIVE INDEX:</span>
-            <span class="hud-val">89.4%</span>
+        <section class="hero">
+          <div class="hero-content">
+            <div class="badge">
+              <span class="skill-dot"></span> System Online // v2026.1
+            </div>
+            <h1>Hi, I'm <span>Imaad Danish</span></h1>
+            <p>
+              Building next-generation Robotics, Artificial Intelligence, 
+              Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.
+            </p>
+
+            <div class="btn-container">
+              <a href="#projects" class="btn primary">
+                Explore Projects
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
           </div>
-          <div class="hud-row">
-            <span class="hud-label">DRIVE SYSTEM:</span>
-            <span class="hud-val">ACTIVE (STANDBY)</span>
+        </section>
+
+        <section id="about" class="section">
+          <div class="title-wrapper">
+            <h2 class="section-title">About Me</h2>
           </div>
-          <div class="hud-row">
-            <span class="hud-label">LOGS ENCRYPTED:</span>
-            <span class="hud-val">AES-256</span>
+
+          <div class="grid">
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3>AI Development</h3>
+              <p>Developing robust architectural neural layers, custom computer vision pipelines, and production-ready machine learning solutions.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9"></path><path d="M8 5h8"></path></svg>
+              </div>
+              <h3>Robotics Engineering</h3>
+              <p>Designing intelligent robotic machinery, implementing sensor fusion techniques, navigation protocols, and dynamic spatial pathfinding.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"></path><path d="M6 21a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v12a3 3 0 0 0 3 3z"></path></svg>
+              </div>
+              <h3>System Integration</h3>
+              <p>Harmonizing high-performance microchips (Raspberry Pi/STM32) with IoT architecture to create scalable smart ecosystem solutions.</p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="title-wrapper">
+            <h2 class="section-title">Featured Projects</h2>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </div>
+              <h3>Autonomous Navigation</h3>
+              <p>Advanced autonomous mobile obstacle evasion robot driven by LiDAR, sonar telemetry, and reactive ROS processing loops.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              </div>
+              <h3>Computer Vision Pipeline</h3>
+              <p>Real-time Object Detection, semantic segmentation and pose estimation executing locally on embedded edge accelerators.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              </div>
+              <h3>AI Assistant Integration</h3>
+              <p>A smart localized LLM assistant that accepts complex voice telemetry commands, orchestrating home IoT tasks.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <h3>Industrial IoT Cloud</h3>
+              <p>A high-speed dashboard delivering telemetry tracking, real-time analytics, and failure forecasting for robotic mechanisms.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <div class="title-wrapper">
+            <h2 class="section-title">Technology Stack</h2>
+          </div>
+
+          <div class="skills-wrapper">
+            <div class="skills">
+              <div class="skill"><span class="skill-dot"></span> Robotics (ROS)</div>
+              <div class="skill"><span class="skill-dot"></span> Artificial Intelligence</div>
+              <div class="skill"><span class="skill-dot"></span> Machine Learning</div>
+              <div class="skill"><span class="skill-dot"></span> Computer Vision</div>
+              <div class="skill"><span class="skill-dot"></span> Python</div>
+              <div class="skill"><span class="skill-dot"></span> C++</div>
+              <div class="skill"><span class="skill-dot"></span> Arduino / ESP32</div>
+              <div class="skill"><span class="skill-dot"></span> Raspberry Pi</div>
+              <div class="skill"><span class="skill-dot"></span> IoT Protocol (MQTT/HTTP)</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="title-wrapper">
+            <h2 class="section-title">Initiate Contact</h2>
+          </div>
+
+          <div class="contact">
+            <a class="contact-card email" href="mailto:imaad.danish003@gmail.com">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <div class="info">
+                <span class="label">Email Secure Direct</span>
+                <span class="val">imaad.danish003@gmail.com</span>
+              </div>
+            </a>
+
+            <a class="contact-card phone" href="https://wa.me/919997554431" target="_blank" rel="noopener noreferrer">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.415 1.258 4.864l-1.282 4.773 4.887-1.282c1.398.761 2.99 1.192 4.673 1.192 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.567 12.853c-.198.555-1.168 1.085-1.611 1.144-.431.059-.988.086-2.914-.682-2.463-.981-4.041-3.486-4.164-3.652-.123-.166-.997-1.328-.997-2.533 0-1.206.63-1.796.852-2.043.222-.247.494-.309.658-.309.164 0 .329.002.472.008.148.006.347-.057.545.419.202.489.691 1.688.751 1.811.06.123.1.267.018.431-.082.164-.123.267-.247.411-.123.144-.26.321-.37.431-.123.123-.251.257-.107.502.144.243.639 1.053 1.372 1.706.942.84 1.734 1.101 1.981 1.225.247.123.391.103.535-.062.144-.165.617-.721.782-.968.165-.247.329-.206.555-.123.226.082 1.44.68 1.688.803.247.123.411.185.473.288.061.103.061.597-.137 1.152z"/></svg>
+              <div class="info">
+                <span class="label">WhatsApp Direct Secure</span>
+                <span class="val">+91 9997554431</span>
+              </div>
+            </a>
+
+            <a class="contact-card github" href="https://github.com/imaadwork" target="_blank" rel="noopener noreferrer">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              <div class="info">
+                <span class="label">Developer Hub</span>
+                <span class="val">github.com/imaadwork</span>
+              </div>
+            </a>
+
+            <a class="contact-card youtube" href="https://youtube.com/@lumorixvfxofficial" target="_blank" rel="noopener noreferrer">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <div class="info">
+                <span class="label">VFX & Engineering Broadcast</span>
+                <span class="val">youtube.com/@lumorixvfxofficial</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <footer>
+          <p>© 2026 Imaad Danish | Next Level Engineering Solutions</p>
+          <p class="credit">COGNITIVE ROBOTICS LABS</p>
+        </footer>
       </div>
-    </div>
 
-  </div>
+      <div class="overlay" id="overlay"></div>
 
-  <script>
-    // --- Canvas Particle Animation Logic Loop ---
+      <button class="hidden-btn" id="lab-trigger" aria-label="Open Hidden Laboratory">67</button>
+
+      <div class="lab" id="lab">
+        <div class="lab-header">
+          <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary)"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            LABORATORIA // 67
+          </h2>
+          <div class="close" id="lab-close">×</div>
+        </div>
+
+        <div class="lab-content">
+          <p>System Authorization Granted. Welcome to the classified experimental terminal.</p>
+
+          <div class="jarvis-console">
+            <div class="jarvis-title">
+              <span class="jarvis-indicator"></span> JARVIS CORE AI v3.0
+            </div>
+            <div class="chat-log" id="chat-log">
+              <div class="chat-msg system-greeting">
+                [SYS_INIT] Connection established. Ask me anything about Imaad's robotics credentials, AI systems, projects, or how to contact him.
+              </div>
+            </div>
+            <div class="chat-input-row">
+              <input type="text" id="chat-input" class="chat-input" placeholder="Initiate query..." autocomplete="off">
+              <button id="chat-send-btn" class="chat-send-btn" aria-label="Send Query">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+            <div class="chat-chips">
+              <button class="chat-chip" onclick="quickQuery('Tell me about your ROS and robotics background')">Robotics Stack</button>
+              <button class="chat-chip" onclick="quickQuery('What AI projects have you built?')">AI Projects</button>
+              <button class="chat-chip" onclick="quickQuery('How can I contact or hire Imaad?')">Get in Touch</button>
+            </div>
+          </div>
+
+          <div class="lab-hud">
+            <div class="hud-row">
+              <span class="hud-label">COGNITIVE INDEX:</span>
+              <span class="hud-val">89.4%</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-label">DRIVE SYSTEM:</span>
+              <span class="hud-val">ACTIVE (STANDBY)</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-label">LOGIC TELEMETRY:</span>
+              <span class="hud-val">NOMINAL // SECURE</span>
+            </div>
+          </div>
+        </div>
+      </div> </div> </div> <script>
+    // 1. Mobile Menu Drawer System
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // 2. Secret Lab Panel System
+    const labTrigger = document.getElementById('lab-trigger');
+    const labDrawer = document.getElementById('lab');
+    const labClose = document.getElementById('lab-close');
+    const overlay = document.getElementById('overlay');
+
+    labTrigger.addEventListener('click', () => {
+      labDrawer.classList.add('open');
+      overlay.classList.add('active');
+    });
+
+    [labClose, overlay].forEach(element => {
+      element.addEventListener('click', () => {
+        labDrawer.classList.remove('open');
+        overlay.classList.remove('active');
+      });
+    });
+
+    // 3. Simulated Canvas Particle Background Matrix
     const canvas = document.getElementById('background-canvas');
     const ctx = canvas.getContext('2d');
-    const container = document.getElementById('scroll-frame');
-
     let particles = [];
+
     function resizeCanvas() {
-      canvas.width = container.clientWidth;
-      canvas.height = container.clientHeight;
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
     }
-    window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 1.5 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.speedY = Math.random() * -0.4 - 0.1;
+        this.alpha = Math.random() * 0.5 + 0.2;
       }
       update() {
-        this.x += this.speedX;
         this.y += this.speedY;
-
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.y < 0) {
+          this.y = canvas.height;
+          this.x = Math.random() * canvas.width;
+        }
       }
       draw() {
-        ctx.fillStyle = 'rgba(0, 229, 255, 0.3)';
+        ctx.fillStyle = `rgba(0, 229, 255, ${this.alpha})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < 40; i++) {
-        particles.push(new Particle());
-      }
+    for (let i = 0; i < 40; i++) {
+      particles.push(new Particle());
     }
-    initParticles();
 
-    function animate() {
+    function animateParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(p => {
         p.update();
         p.draw();
       });
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animateParticles);
     }
-    animate();
+    animateParticles();
 
-    // --- Navigation UI Controls Menu Toggle ---
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const overlay = document.getElementById('overlay');
-    const navItems = document.querySelectorAll('.nav-item');
-
-    function toggleMenu() {
-      mobileToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      overlay.classList.toggle('active');
-    }
-
-    mobileToggle.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', () => {
-      if(navLinks.classList.contains('active')) toggleMenu();
-    });
-    navItems.forEach(item => item.addEventListener('click', toggleMenu));
-
-    // --- Laboratory Toggle Panels ---
-    const labTrigger = document.getElementById('lab-trigger');
-    const labPanel = document.getElementById('lab');
-    const labClose = document.getElementById('lab-close');
-
-    labTrigger.addEventListener('click', () => {
-      labPanel.classList.add('open');
-    });
-    labClose.addEventListener('click', () => {
-      labPanel.classList.remove('open');
-    });
-
-    // --- JARVIS Intelligence Terminal Logic Module ---
+    // 4. JARVIS Module Terminal Conversational Logic
     const chatLog = document.getElementById('chat-log');
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
 
-    const responses = {
-      robotics: "Imaad operates robustly across custom ROS telemetry layers, specialized sensor pathfinding processing loops, and embedded smart microchips like Raspberry Pi and STM32 arrays.",
-      projects: "Key feature systems include locally deployed edge AI Computer Vision nodes, LiDAR-driven Autonomous Evasion Rovers, and secure edge-based custom LLM models.",
-      contact: "Secure connections can be deployed directly using Email at imaad.danish003@gmail.com or via WhatsApp at +91 9997554431.",
-      default: "Query accepted. System matrix data indicates advanced optimization matches in fields of Machine Learning edge structures, IoT tracking, and clean C++/Python engineering setups."
-    };
-
-    function triggerAIMessage(text) {
-      if(!text.trim()) return;
-      
-      const userMsg = document.createElement('div');
-      userMsg.className = 'chat-msg user';
-      userMsg.textContent = text;
-      chatLog.appendChild(userMsg);
+    function executeMessageAppend(msgText, identifier) {
+      const msgBubble = document.createElement('div');
+      msgBubble.classList.add('chat-msg', identifier);
+      msgBubble.innerText = msgText;
+      chatLog.appendChild(msgBubble);
       chatLog.scrollTop = chatLog.scrollHeight;
-      
-      chatInput.value = '';
-
-      setTimeout(() => {
-        const aiMsg = document.createElement('div');
-        aiMsg.className = 'chat-msg ai';
-        
-        const cleanQuery = text.toLowerCase();
-        if(cleanQuery.includes('robot') || cleanQuery.includes('ros')) {
-          aiMsg.textContent = responses.robotics;
-        } else if(cleanQuery.includes('project') || cleanQuery.includes('build') || cleanQuery.includes('vision')) {
-          aiMsg.textContent = responses.projects;
-        } else if(cleanQuery.includes('contact') || cleanQuery.includes('hire') || cleanQuery.includes('email')) {
-          aiMsg.textContent = responses.contact;
-        } else {
-          aiMsg.textContent = responses.default;
-        }
-        
-        chatLog.appendChild(aiMsg);
-        chatLog.scrollTop = chatLog.scrollHeight;
-      }, 650);
     }
 
-    chatSendBtn.addEventListener('click', () => triggerAIMessage(chatInput.value));
-    chatInput.addEventListener('keypress', (e) => {
-      if(e.key === 'Enter') triggerAIMessage(chatInput.value);
+    function quickQuery(queryText) {
+      executeMessageAppend(queryText, 'user');
+      setTimeout(() => {
+        let response = "[JARVIS]: Operational parameters verified. Data arrays loaded successfully.";
+        if (queryText.includes('ROS')) {
+          response = "[JARVIS]: Core automation logs loaded. Expert capabilities map to ROS/ROS2 nodes, sensor matrices (LiDAR, sonar arrays), and autonomous kinematic models.";
+        } else if (queryText.includes('AI')) {
+          response = "[JARVIS]: Artificial Intelligence architectures include local neural nodes, tensor segmentation, localized predictive heuristics, and custom edge vision models.";
+        } else if (queryText.includes('contact')) {
+          response = "[JARVIS]: Link protocol status online. Select the encrypted direct email link or WhatsApp framework arrays outside this drawer layer to transmit credentials.";
+        }
+        executeMessageAppend(response, 'ai');
+      }, 700);
+    }
+
+    chatSendBtn.addEventListener('click', () => {
+      const rawText = chatInput.value.trim();
+      if (!rawText) return;
+      executeMessageAppend(rawText, 'user');
+      chatInput.value = '';
+      setTimeout(() => {
+        executeMessageAppend("[JARVIS]: Telemetry signal registered to system logs. System connection stable.", 'ai');
+      }, 700);
     });
 
-    function quickQuery(chipText) {
-      triggerAIMessage(chipText);
-    }
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') chatSendBtn.click();
+    });
   </script>
 </body>
 </html>
