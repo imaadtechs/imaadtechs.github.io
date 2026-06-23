@@ -1,1189 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Imaad Danish | Robotics & AI Engineer</title>
-  
-  <meta name="title" content="Imaad Danish | Robotics & AI Engineer">
-  <meta name="description" content="Portfolio of Imaad Danish. Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
-  <meta name="keywords" content="Imaad Danish, Robotics, AI Engineer, Machine Learning, Computer Vision, ROS, Embedded Systems, IoT, Automation">
-  <meta name="author" content="Imaad Danish">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:title" content="Imaad Danish | Robotics & AI Engineer">
-  <meta property="og:description" content="Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
-  <meta property="og:image" content="https://yourdomain.com/images/portfolio-preview.jpg">
-
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yourdomain.com/">
-  <meta property="twitter:title" content="Imaad Danish | Robotics & AI Engineer">
-  <meta property="twitter:description" content="Building next-generation Robotics, Artificial Intelligence, Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.">
-  <meta property="twitter:image" content="https://yourdomain.com/images/portfolio-preview.jpg">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-base: #0b0f19;
-      --bg-surface: #1e293b;
-      --bg-surface-accent: #334155;
-      --color-primary: #00e5ff;
-      --color-primary-glow: rgba(0, 229, 255, 0.15);
-      --color-text-main: #ffffff;
-      --color-text-muted: #cbd5e1;
-      --color-accent: #3b82f6;
-      --font-sans: 'Poppins', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* --- BASE LAYOUT RULES FOR LARGE SCREENS (Desktop, Laptop, MacBook) --- */
-    html, body {
-      width: 100%;
-      height: 100%;
-      background: #020617; 
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* --- Desktop Only Simulated Operating System Window Wrapper --- */
-    .window-viewport {
-      width: 100%;
-      max-width: 420px;
-      height: 95vh;
-      background: var(--bg-base);
-      border: 1px solid rgba(0, 229, 255, 0.25);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 229, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 10;
-    }
-
-    .window-header {
-      background: #111827;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .window-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-    .window-dot.red { background: #ef4444; }
-    .window-dot.yellow { background: #eab308; }
-    .window-dot.green { background: #22c55e; }
-
-    .window-title {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: rgba(0, 229, 255, 0.6);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    /* --- Content Viewport Box --- */
-    .phone-viewport {
-      width: 100%;
-      flex: 1;
-      position: relative;
-      overflow-y: auto;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    /* --- MOBILE PHONES OVERRIDE MEDIA QUERY --- */
-    @media (max-width: 500px) {
-      html, body {
-        overflow: auto; 
-        display: block; 
-        background: var(--bg-base); 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Imaad Danish | VFX Portfolio & Creative Development</title>
+    <meta
+      name="description"
+      content="Imaad Danish is a creative developer and visual effects artist crafting immersive digital experiences and high-fidelity video production."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- Core Variable Specifications & Base Resets --- */
+      :root {
+        --bg-deep: #05070c;
+        --bg-surface: #0d111c;
+        --bg-glass: rgba(13, 17, 28, 0.7);
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --accent-glow: #2563eb;
+        --accent-light: #60a5fa;
+        --text-primary: #f8fafc;
+        --text-muted: #94a3b8;
+        --font-display: 'Space Grotesk', sans-serif;
+        --font-sans: 'Manrope', sans-serif;
       }
-      .window-viewport {
-        max-width: 100%;
-        height: auto;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-deep);
+      }
+
+      body {
+        font-family: var(--font-sans);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      /* --- Anti-Glitch Page Shield Layout --- */
+      .page-shell {
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* --- Header & Layout Navigation --- */
+      .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-family: var(--font-display);
+        font-weight: 700;
+      }
+
+      .brand-mark {
+        background: var(--accent-glow);
+        padding: 0.35rem 0.6rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+
+      .brand-text {
+        font-size: 1.15rem;
+        letter-spacing: -0.03em;
+      }
+
+      .site-nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .site-nav a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .site-nav a:hover {
+        color: var(--text-primary);
+      }
+
+      /* --- Hero Section & Fluid Layout Engine --- */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3.5rem;
+        padding: 5rem 0;
+        align-items: center;
+      }
+
+      .eyebrow {
+        font-family: var(--font-display);
+        color: var(--accent-light);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.5rem;
+      }
+
+      .accent {
+        color: transparent;
+        background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .hero-text {
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        max-width: 580px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.8rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .button-primary {
+        background: var(--accent-glow);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+      }
+
+      .button-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(37, 99, 235, 0.4);
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+      }
+
+      .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* --- Metrics Framework --- */
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 2rem;
+      }
+
+      .hero-metrics strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .hero-metrics span {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* --- Hero Visual Elements (Interactive Cards - No Image Elements) --- */
+      .hero-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: -1;
+        opacity: 0.35;
+      }
+
+      .orb-one {
+        width: 280px;
+        height: 280px;
+        background: var(--accent-glow);
+        top: -10%;
+        left: -10%;
+      }
+
+      .orb-two {
+        width: 220px;
+        height: 220px;
+        background: #a855f7;
+        bottom: -10%;
+        right: -10%;
+      }
+
+      .identity-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 20px;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 380px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .identity-card h2 {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .card-label {
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+
+      .role-switch {
+        font-size: 0.95rem;
+        color: var(--accent-light);
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      .signal-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .signal-list li {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .signal-list li::before {
+        content: "→";
+        color: var(--accent-light);
+        font-weight: 700;
+      }
+
+      /* Floating Info Badges */
+      .floating-note {
+        position: absolute;
+        background: var(--bg-glass);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-subtle);
+        padding: 0.85rem 1.25rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        max-width: 200px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .floating-note span {
+        display: block;
+        color: var(--text-muted);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        margin-bottom: 0.15rem;
+      }
+
+      .note-top {
+        top: 5%;
+        right: -5%;
+      }
+
+      .note-bottom {
+        bottom: 8%;
+        left: -5%;
+      }
+
+      /* --- Content Sections --- */
+      .section {
+        padding: 6rem 0;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .section-heading {
+        margin-bottom: 4rem;
+        max-width: 650px;
+      }
+
+      .section-heading h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      /* About Section Layout */
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .glass-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        padding: 2rem;
+        border-radius: 16px;
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* Project Display Engine Matrix */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        padding: 2.5rem;
+        border-radius: 16px;
+        position: relative;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .project-card:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-4px);
+      }
+
+      .project-index {
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        color: var(--accent-light);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-card h3 {
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .project-tags span {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-subtle);
+        padding: 0.3rem 0.75rem;
+        border-radius: 20px;
+        color: var(--text-muted);
+      }
+
+      /* Capability Stack Components */
+      .skills-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .skill-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-content: flex-start;
+      }
+
+      .skill-cloud span {
+        font-family: var(--font-display);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        padding: 0.6rem 1.2rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .skills-panels {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .skill-panel {
+        background: var(--bg-surface);
+        border-left: 3px solid var(--accent-glow);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+      }
+
+      .skill-panel h3 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .skill-panel p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      /* --- Contact Module Section --- */
+      .contact-card {
+        background: linear-gradient(135deg, #0d1324 0%, #070a12 100%);
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        border-radius: 24px;
+        padding: 3.5rem;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .contact-card h2 {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-copy {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-links a {
+        font-family: var(--font-display);
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-subtle);
+        border-radius: 10px;
+        transition: all 0.2s ease;
+      }
+
+      .contact-links a:hover {
+        background: rgba(37, 99, 235, 0.08);
+        border-color: var(--accent-glow);
+        color: var(--accent-light);
+        transform: translateX(4px);
+      }
+
+      /* --- Site Footer --- */
+      .site-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border-subtle);
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      /* --- Easter Egg Panel System --- */
+      .easter-toggle {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        color: var(--text-muted);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.8rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+        transition: all 0.2s ease;
+      }
+
+      .easter-toggle:hover {
+        color: var(--text-primary);
+        border-color: var(--text-muted);
+      }
+
+      .easter-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(3, 5, 10, 0.98);
+        z-index: 10000;
+        padding: 3rem 1.5rem;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .easter-panel[aria-hidden="false"] {
         display: block;
       }
-      .window-header {
-        display: none; /* Desktop shell hidden on true mobile ports */
+
+      .easter-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: transparent;
+        border: none;
+        color: var(--text-primary);
+        font-size: 2rem;
+        cursor: pointer;
       }
-      .phone-viewport {
-        height: auto; 
-        overflow-y: visible;
+
+      .easter-panel h2 {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
       }
-    }
 
-    .phone-viewport::-webkit-scrollbar {
-      width: 4px;
-    }
-    .phone-viewport::-webkit-scrollbar-thumb {
-      background: rgba(0, 229, 255, 0.3);
-      border-radius: 10px;
-    }
-
-    /* Background Particle Engine Canvas */
-    #background-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      touch-action: none;
-      will-change: transform;
-    }
-
-    .app-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    /* Header Navigation bar styling */
-    header {
-      background: rgba(30, 41, 59, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 16px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .logo {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--color-text-main);
-    }
-
-    .logo span {
-      color: var(--color-primary);
-      font-family: var(--font-mono);
-    }
-
-    /* Mobile Slide-Out Drawer Links */
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 75%;
-      max-width: 300px;
-      height: 100vh;
-      background: rgba(15, 23, 42, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1005;
-      border-left: 1px solid rgba(0, 229, 255, 0.15);
-    }
-
-    .nav-links.active {
-      right: 0;
-    }
-
-    .nav-links li a {
-      color: var(--color-text-main); 
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-    .nav-links li a:hover,
-    .nav-links li a.active {
-      color: var(--color-primary);
-    }
-
-    /* Hamburger Menu Button Lines */
-    .mobile-toggle {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 22px;
-      height: 16px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1010;
-    }
-
-    .mobile-toggle span {
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-primary);
-      transition: var(--transition);
-      transform-origin: left;
-    }
-
-    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(2px, 1px); }
-    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
-    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(2px, -1px); }
-
-    /* Hero Section */
-    .hero {
-      min-height: calc(100vh - 120px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    @media (max-width: 500px) {
-      .hero {
-        min-height: 85vh;
+      .easter-panel p {
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        max-width: 500px;
       }
-    }
 
-    .hero-content {
-      width: 100%;
-      z-index: 10;
-    }
+      .easter-embed-grid {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(0, 229, 255, 0.12);
-      border: 1px solid rgba(0, 229, 255, 0.4);
-      color: var(--color-primary);
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-    }
+      .easter-embed {
+        background: #000;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+        display: inline-block;
+      }
 
-    .hero-content h1 {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      color: var(--color-text-main); 
-    }
+      /* --- Responsive Breakpoint Adaptation Rules --- */
+      @media (max-width: 968px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+          padding: 3rem 0;
+          text-align: center;
+        }
 
-    .hero-content h1 span {
-      background: linear-gradient(135deg, #00e5ff 0%, #3b82f6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .hero-text {
+          margin-left: auto;
+          margin-right: auto;
+        }
 
-    .hero-content p {
-      margin: 0 auto 32px auto;
-      color: var(--color-text-muted);
-      font-size: 14px;
-    }
+        .hero-actions {
+          justify-content: center;
+        }
 
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
+        .hero-visual {
+          order: -1;
+        }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: var(--transition);
-      cursor: pointer;
-      width: 100%;
-    }
+        .skills-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
 
-    .btn.primary {
-      background: var(--color-primary);
-      color: #0b0f19; 
-      box-shadow: 0 4px 20px var(--color-primary-glow);
-    }
+        .contact-card {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          padding: 2rem;
+        }
+      }
 
-    .btn.secondary {
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--color-text-main);
-    }
+      @media (max-width: 640px) {
+        .site-nav {
+          display: none;
+        }
 
-    /* Section Component Containers */
-    .section {
-      padding: 50px 20px;
-      width: 100%;
-      position: relative;
-    }
+        .hero-actions {
+          flex-direction: column;
+          width: 100%;
+        }
 
-    .title-wrapper {
-      text-align: center;
-      margin-bottom: 32px;
-    }
+        .button {
+          width: 100%;
+        }
 
-    .section-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--color-text-main);
-      position: relative;
-      display: inline-block;
-    }
+        .hero-metrics {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
 
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 3px;
-      background: var(--color-primary);
-      margin: 10px auto 0 auto;
-      border-radius: 2px;
-    }
+        .floating-note {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">ID</span>
+          <span class="brand-text">Imaad Danish</span>
+        </a>
+        <nav class="site-nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-    .grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      width: 100%;
-    }
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow">Creative & Technical Portfolio</p>
+            <h1>
+              I design
+              <span class="accent">visual stories</span>
+              and engineer high-end software logic.
+            </h1>
+            <p class="hero-text">
+              I'm Imaad, a creative systems builder specializing in Visual Effects (VFX), 
+              motion graphics, and application development. I blend structural engineering code 
+              with multi-platform software solutions to build high-performance products.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">Explore Work</a>
+              <a class="button button-secondary" href="#contact">Let's Connect</a>
+            </div>
+            <div class="hero-metrics">
+              <article>
+                <strong>VFX Studio</strong>
+                <span>Advanced cinematic pipeline architecture</span>
+              </article>
+              <article>
+                <strong>Apps + Web + Media</strong>
+                <span>Multi-platform creator framework</span>
+              </article>
+              <article>
+                <strong>Automation</strong>
+                <span>Optimized script tooling and rendering pipelines</span>
+              </article>
+            </div>
+          </div>
 
-    /* High contrast UI Cards */
-    .card {
-      background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 20px;
-      border-radius: 14px;
-      position: relative;
-      overflow: hidden;
-    }
+          <div class="hero-visual">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <article class="identity-card">
+              <p class="card-label">Creator Profile</p>
+              <h2>Imaad Danish</h2>
+              <p class="role-switch" data-role-switch>
+                VFX Artist & Developer
+              </p>
+              <ul class="signal-list">
+                <li>High-Fidelity Visual Effects</li>
+                <li>Creative Software Engineering</li>
+                <li>Digital Production & Assets</li>
+              </ul>
+            </article>
+            <article class="floating-note note-top">
+              <span>Current focus</span>
+              <strong>VFX Compositing + Web & System Tools</strong>
+            </article>
+            <article class="floating-note note-bottom">
+              <span>Goal</span>
+              <strong>Engineer immersive platforms that leave a lasting signature</strong>
+            </article>
+          </div>
+        </section>
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.06), transparent 50%);
-      pointer-events: none;
-    }
+        <section class="section split-section" id="about">
+          <div class="section-heading reveal">
+            <p class="eyebrow">About Me</p>
+            <h2>Synthesizing art and computation into final assets.</h2>
+          </div>
+          <div class="about-grid">
+            <article class="glass-card reveal">
+              <p>
+                I thrive at the intersection of aesthetic design and programming logic. 
+                Using post-production software alongside code execution layers, I construct complex environments, 
+                interactive logic, and custom application designs.
+              </p>
+            </article>
+            <article class="glass-card reveal">
+              <p>
+                From rendering cinematic motion work on Lumorix VFX to building front-end interfaces and 
+                system scripts, I love making media feel dynamic, responsive, and fully optimized.
+              </p>
+            </article>
+            <article class="glass-card reveal">
+              <p>
+                Whether managing deep render pipelines or cross-compiling production logic, I prioritize 
+                clean infrastructure architecture, modular systems design, and fluid scalability.
+              </p>
+            </article>
+          </div>
+        </section>
 
-    .card-icon {
-      color: var(--color-primary);
-      margin-bottom: 12px;
-      background: rgba(0, 229, 255, 0.1);
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      border: 1px solid rgba(0, 229, 255, 0.3);
-    }
+        <section class="section" id="projects">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Featured Production</p>
+            <h2>Projects that reflect how I think and build.</h2>
+          </div>
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <span class="project-index">01</span>
+              <h3>Lumorix VFX Direction</h3>
+              <p>
+                Cinematic video production using cutting-edge simulation, motion tracking, compositing, and visual grading tools.
+              </p>
+              <div class="project-tags">
+                <span>VFX Pipeline</span>
+                <span>Compositing</span>
+                <span>Motion Editing</span>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-index">02</span>
+              <h3>Creative Web Frameworks</h3>
+              <p>
+                Developing interactive web infrastructure tailored for media rendering, low latency, and modern lookbooks.
+              </p>
+              <div class="project-tags">
+                <span>HTML5 / CSS3</span>
+                <span>UI Engineering</span>
+                <span>Modern Layouts</span>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-index">03</span>
+              <h3>Cross-Platform System Scripts</h3>
+              <p>
+                Automated background systems designed to streamline desktop logic, file rendering loops, and environment tasks.
+              </p>
+              <div class="project-tags">
+                <span>Automation</span>
+                <span>Script Control</span>
+                <span>System Logic</span>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-index">04</span>
+              <h3>Application Interface Design</h3>
+              <p>
+                Building user interfaces with adaptive layouts that balance media density with intuitive user journeys.
+              </p>
+              <div class="project-tags">
+                <span>UX Architecture</span>
+                <span>Responsive Code</span>
+                <span>Interface Assets</span>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-index">05</span>
+              <h3>Asset Management Tooling</h3>
+              <p>
+                Designing custom script routines to track, compress, and dispatch lightweight production-grade source assets.
+              </p>
+              <div class="project-tags">
+                <span>Optimization</span>
+                <span>Data Pipelines</span>
+                <span>Media Automation</span>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <span class="project-index">06</span>
+              <h3>Digital Production Architecture</h3>
+              <p>
+                Deploying responsive environments, production engines, and custom-tailored environments for multi-screen configurations.
+              </p>
+              <div class="project-tags">
+                <span>Cross-Platform</span>
+                <span>Render Architecture</span>
+                <span>Production Tech</span>
+              </div>
+            </article>
+          </div>
+        </section>
 
-    .card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: var(--color-text-main);
-    }
+        <section class="section skills-section" id="skills">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Capability Stack</p>
+            <h2>Tools and technologies behind my builds.</h2>
+          </div>
+          <div class="skills-layout">
+            <div class="skill-cloud reveal">
+              <span>VFX Workflows</span>
+              <span>Video Compositing</span>
+              <span>Motion Graphics</span>
+              <span>HTML5 / CSS3</span>
+              <span>JavaScript Logic</span>
+              <span>UI/UX Architecture</span>
+              <span>Automation Systems</span>
+              <span>Cross-Platform Dev</span>
+              <span>Render Scaling</span>
+              <span>Asset Pipelines</span>
+              <span>Git & Source Control</span>
+              <span>Script Tooling</span>
+            </div>
+            <div class="skills-panels reveal">
+              <article class="skill-panel">
+                <h3>Visual Thinking</h3>
+                <p>
+                  I shape raw concepts into high-fidelity compositions that engage users and balance aesthetic color spaces.
+                </p>
+              </article>
+              <article class="skill-panel">
+                <h3>Structural Code</h3>
+                <p>
+                  I build modular software programs that give web systems structural safety, reliable performance, and smooth logic response.
+                </p>
+              </article>
+              <article class="skill-panel">
+                <h3>Unified Platform Deployment</h3>
+                <p>
+                  I design universally accessible code targets across mobile screens, notebooks, and workstations without display failure.
+                </p>
+              </article>
+              <article class="skill-panel">
+                <h3>Next Frontier</h3>
+                <p>
+                  My current focus is integrating serverless render execution pipelines with web layouts to scale real-time visual outputs.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
 
-    .card p {
-      color: var(--color-text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
+        <section class="section contact-section" id="contact">
+          <div class="contact-card reveal">
+            <div>
+              <p class="eyebrow">Contact</p>
+              <h2>Let’s build something exciting.</h2>
+              <p class="contact-copy">
+                If you want to collaborate on production design, check system code pipelines, or review my creative operations, reach out through the modules below.
+              </p>
+            </div>
+            <div class="contact-links">
+              <a href="mailto:imaad.danish003@gmail.com">imaad.danish003@gmail.com</a>
+              <a href="https://wa.me/919997554431" target="_blank" rel="noreferrer">
+                WhatsApp: +91 99975 54431
+              </a>
+              <a href="https://github.com/imaadwork" target="_blank" rel="noreferrer">
+                GitHub: github.com/imaadwork
+              </a>
+              <a href="https://youtube.com/@lumorixvfxofficial?si=TSC92IapXkmh0Vaw" target="_blank" rel="noreferrer">
+                YouTube: Lumorix VFX Official
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    /* Skills Configuration */
-    .skills-wrapper {
-      width: 100%;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    .skill {
-      background: var(--bg-surface);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 8px 14px;
-      border-radius: 100px;
-      font-weight: 500;
-      font-size: 12px;
-      color: var(--color-text-main);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .skill-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      box-shadow: 0 0 6px var(--color-primary);
-    }
-
-    /* Contact Block Links */
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid transparent;
-    }
-
-    .contact-card svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    .contact-card .info {
-      display: flex;
-      flex-direction: column;
-      min-width: 0; 
-    }
-
-    .contact-card .label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--color-text-main);
-      opacity: 0.8;
-    }
-
-    .contact-card .val {
-      font-size: 12px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: var(--color-text-main);
-    }
-
-    .email { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.4); color: #4ade80; }
-    .phone { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa; }
-    .github { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.25); color: #f1f5f9; }
-    .youtube { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: var(--bg-surface);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--color-text-muted);
-      font-size: 12px;
-    }
-
-    footer p {
-      margin-bottom: 6px;
-    }
-
-    .credit {
-      font-family: var(--font-mono);
-      color: var(--color-primary);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-
-    /* Lab Engine Panel Floating Controller Trigger */
-    .hidden-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 46px;
-      height: 46px;
-      border: 1px solid rgba(0, 229, 255, 0.5);
-      border-radius: 50%;
-      background: var(--bg-surface);
-      color: var(--color-primary);
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    /* Lab Slide Panel Drawer Overlay System */
-    .lab {
-      position: absolute;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(11, 15, 25, 0.99);
-      border-left: 1px solid rgba(0, 229, 255, 0.3);
-      padding: 20px;
-      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow-y: auto;
-      z-index: 2000;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-    }
-
-    .lab.open {
-      right: 0;
-    }
-
-    .lab-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(0, 229, 255, 0.3);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-    }
-
-    .lab-header h2 {
-      font-family: var(--font-mono);
-      font-size: 14px;
-      color: var(--color-primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .close {
-      font-size: 26px;
-      cursor: pointer;
-      color: var(--color-text-main);
-      padding: 2px 8px;
-    }
-
-    .lab-content p {
-      color: var(--color-text-muted);
-      font-size: 12px;
-      margin-bottom: 16px;
-    }
-
-    /* JARVIS AI Module Layout */
-    .jarvis-console {
-      background: var(--bg-surface);
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 20px;
-    }
-
-    .jarvis-title {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--color-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .jarvis-indicator {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 6px #4ade80;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.4; }
-      50% { opacity: 1; }
-      100% { opacity: 0.4; }
-    }
-
-    .chat-log {
-      height: 180px;
-      overflow-y: auto;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(11, 15, 25, 0.8);
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .chat-log::-webkit-scrollbar {
-      width: 3px;
-    }
-    .chat-log::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .chat-msg {
-      max-width: 90%;
-      padding: 6px 10px;
-      border-radius: 8px;
-      line-height: 1.4;
-      color: var(--color-text-main);
-    }
-
-    .chat-msg.system-greeting {
-      background: rgba(0, 229, 255, 0.08);
-      color: var(--color-primary);
-      border: 1px solid rgba(0, 229, 255, 0.2);
-      align-self: flex-start;
-      font-family: var(--font-mono);
-      font-size: 11px;
-    }
-
-    .chat-msg.user {
-      background: var(--bg-surface-accent);
-      border-bottom-right-radius: 2px;
-      align-self: flex-end;
-    }
-
-    .chat-msg.ai {
-      background: rgba(59, 130, 246, 0.2);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      border-bottom-left-radius: 2px;
-      align-self: flex-start;
-    }
-
-    .chat-input-row {
-      display: flex;
-      gap: 6px;
-    }
-
-    .chat-input {
-      flex: 1;
-      background: rgba(11, 15, 25, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      padding: 8px 12px;
-      color: var(--color-text-main);
-      font-size: 12px;
-      outline: none;
-    }
-
-    .chat-input:focus {
-      border-color: var(--color-primary);
-    }
-
-    .chat-send-btn {
-      background: var(--color-primary);
-      border: none;
-      border-radius: 8px;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0b0f19;
-      cursor: pointer;
-    }
-
-    .chat-chips {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .chat-chip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: var(--color-text-main);
-      border-radius: 100px;
-      padding: 4px 10px;
-      font-size: 10px;
-      cursor: pointer;
-    }
-
-    /* Cyber HUD Data Analytics Row info block graphics */
-    .lab-hud {
-      background: rgba(30, 41, 59, 0.4);
-      border: 1px dashed rgba(0, 229, 255, 0.3);
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 20px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-    }
-
-    .hud-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-    }
-
-    .hud-label {
-      color: var(--color-text-muted);
-    }
-
-    .hud-val {
-      color: var(--color-primary);
-    }
-
-    /* Frame Modal Overlay Layer */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 998;
-      opacity: 0;
-      pointer-events: none;
-      transition: var(--transition);
-    }
-
-    .overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="window-viewport">
-    <div class="window-header">
-      <div class="window-dots">
-        <span class="window-dot red"></span>
-        <span class="window-dot yellow"></span>
-        <span class="window-dot green"></span>
-      </div>
-      <div class="window-title">COGNITIVE_OS_v2026.1</div>
+      <footer class="site-footer">
+        <p>© 2026 Imaad Danish. Engineered for high-fidelity media production.</p>
+      </footer>
     </div>
 
-    <div class="phone-viewport" id="scroll-frame">
-      
-      <canvas id="background-canvas"></canvas>
+    <button
+      class="easter-toggle"
+      type="button"
+      aria-label="Open hidden lab"
+      data-easter-toggle
+    >
+      67
+    </button>
 
-      <div class="app-content">
-        <header>
-          <nav>
-            <div class="logo">
-              IMAAD<span>DANISH</span>
-            </div>
-
-            <ul class="nav-links" id="nav-links">
-              <li><a href="#about" class="nav-item">About</a></li>
-              <li><a href="#projects" class="nav-item">Projects</a></li>
-              <li><a href="#skills" class="nav-item">Skills</a></li>
-              <li><a href="#contact" class="nav-item">Contact</a></li>
-            </ul>
-
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </nav>
-        </header>
-
-        <section class="hero">
-          <div class="hero-content">
-            <div class="badge">
-              <span class="skill-dot"></span> System Online // v2026.1
-            </div>
-            <h1>Hi, I'm <span>Imaad Danish</span></h1>
-            <p>
-              Building next-generation Robotics, Artificial Intelligence, 
-              Machine Learning, and Advanced Automation solutions to bridge physical and virtual realities.
-            </p>
-
-            <div class="btn-container">
-              <a href="#projects" class="btn primary">
-                Explore Projects
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-              <a href="#contact" class="btn secondary">Contact Me</a>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" class="section">
-          <div class="title-wrapper">
-            <h2 class="section-title">About Me</h2>
-          </div>
-
-          <div class="grid">
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-              </div>
-              <h3>AI Development</h3>
-              <p>Developing robust architectural neural layers, custom computer vision pipelines, and production-ready machine learning solutions.</p>
-            </div>
-
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9"></path><path d="M8 5h8"></path></svg>
-              </div>
-              <h3>Robotics Engineering</h3>
-              <p>Designing intelligent robotic machinery, implementing sensor fusion techniques, navigation protocols, and dynamic spatial pathfinding.</p>
-            </div>
-
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"></path><path d="M6 21a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v12a3 3 0 0 0 3 3z"></path></svg>
-              </div>
-              <h3>System Integration</h3>
-              <p>Harmonizing high-performance microchips (Raspberry Pi/STM32) with IoT architecture to create scalable smart ecosystem solutions.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" class="section">
-          <div class="title-wrapper">
-            <h2 class="section-title">Featured Projects</h2>
-          </div>
-
-          <div class="grid">
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-              </div>
-              <h3>Autonomous Navigation</h3>
-              <p>Advanced autonomous mobile obstacle evasion robot driven by LiDAR, sonar telemetry, and reactive ROS processing loops.</p>
-            </div>
-
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-              </div>
-              <h3>Computer Vision Pipeline</h3>
-              <p>Real-time Object Detection, semantic segmentation and pose estimation executing locally on embedded edge accelerators.</p>
-            </div>
-
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-              </div>
-              <h3>AI Assistant Integration</h3>
-              <p>A smart localized LLM assistant that accepts complex voice telemetry commands, orchestrating home IoT tasks.</p>
-            </div>
-
-            <div class="card">
-              <div class="card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-              </div>
-              <h3>Industrial IoT Cloud</h3>
-              <p>A high-speed dashboard delivering telemetry tracking, real-time analytics, and failure forecasting for robotic mechanisms.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" class="section">
-          <div class="title-wrapper">
-            <h2 class="section-title">Technology Stack</h2>
-          </div>
-
-          <div class="skills-wrapper">
-            <div class="skills">
-              <div class="skill"><span class="skill-dot"></span> Robotics (ROS)</div>
-              <div class="skill"><span class="skill-dot"></span> Artificial Intelligence</div>
-              <div class="skill"><span class="skill-dot"></span> Machine Learning</div>
-              <div class="skill"><span class="skill-dot"></span> Computer Vision</div>
-              <div class="skill"><span class="skill-dot"></span> Python</div>
-              <div class="skill"><span class="skill-dot"></span> C++</div>
-              <div class="skill"><span class="skill-dot"></span> Arduino / ESP32</div>
-              <div class="skill"><span class="skill-dot"></span> Raspberry Pi</div>
-              <div class="skill"><span class="skill-dot"></span> IoT Protocol (MQTT/HTTP)</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="section">
-          <div class="title-wrapper">
-            <h2 class="section-title">Initiate Contact</h2>
-          </div>
-
-          <div class="contact">
-            <a class="contact-card email" href="mailto:imaad.danish003@gmail.com">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              <div class="info">
-                <span class="label">Email Secure Direct</span>
-                <span class="val">imaad.danish003@gmail.com</span>
-              </div>
-            </a>
-
-            <a class="contact-card phone" href="https://wa.me/919997554431" target="_blank" rel="noopener noreferrer">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.415 1.258 4.864l-1.282 4.773 4.887-1.282c1.398.761 2.99 1.192 4.673 1.192 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.567 12.853c-.198.555-1.168 1.085-1.611 1.144-.431.059-.988.086-2.914-.682-2.463-.981-4.041-3.486-4.164-3.652-.123-.166-.997-1.328-.997-2.533 0-1.206.63-1.796.852-2.043.222-.247.494-.309.658-.309.164 0 .329.002.472.008.148.006.347-.057.545.419.202.489.691 1.688.751 1.811.06.123.1.267.018.431-.082.164-.123.267-.247.411-.123.144-.26.321-.37.431-.123.123-.251.257-.107.502.144.243.639 1.053 1.372 1.706.942.84 1.734 1.101 1.981 1.225.247.123.391.103.535-.062.144-.165.617-.721.782-.968.165-.247.329-.206.555-.123.226.082 1.44.68 1.688.803.247.123.411.185.473.288.061.103.061.597-.137 1.152z"/></svg>
-              <div class="info">
-                <span class="label">WhatsApp Direct Secure</span>
-                <span class="val">+91 9997554431</span>
-              </div>
-            </a>
-
-            <a class="contact-card github" href="https://github.com/imaadwork" target="_blank" rel="noopener noreferrer">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-              <div class="info">
-                <span class="label">Developer Hub</span>
-                <span class="val">github.com/imaadwork</span>
-              </div>
-            </a>
-
-            <a class="contact-card youtube" href="https://youtube.com/@lumorixvfxofficial" target="_blank" rel="noopener noreferrer">
-              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <div class="info">
-                <span class="label">VFX & Engineering Broadcast</span>
-                <span class="val">youtube.com/@lumorixvfxofficial</span>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <footer>
-          <p>© 2026 Imaad Danish | Next Level Engineering Solutions</p>
-          <p class="credit">COGNITIVE ROBOTICS LABS</p>
-        </footer>
+    <section class="easter-panel" aria-hidden="true" data-easter-panel>
+      <button class="easter-close" type="button" aria-label="Close hidden lab" data-easter-close>
+        ×
+      </button>
+      <p class="eyebrow">Hidden Lab</p>
+      <h2>Technologia // 67</h2>
+      <p>
+        A tiny secret corner for the people who actually click around. Pure
+        chaos, pure energy.
+      </p>
+      <div class="easter-embed-grid">
+        <div class="easter-embed">
+          <iframe
+            width="110"
+            height="200"
+            src="https://www.myinstants.com/instant/67-sound-90775/embed/"
+            frameborder="0"
+            scrolling="no"
+            title="67 soundboard"
+          ></iframe>
+        </div>
+        <div class="easter-embed">
+          <iframe
+            width="110"
+            height="200"
+            src="https://www.myinstants.com/instant/technologia-53863/embed/"
+            frameborder="0"
+            scrolling="no"
+            title="Technologia soundboard"
+          ></iframe>
+        </div>
       </div>
+    </section>
 
-      <div class="overlay" id="overlay"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('[data-easter-toggle]');
+        const closeButton = document.querySelector('[data-easter-close]');
+        const hiddenLabPanel = document.querySelector('[data-easter-panel]');
 
-      <button class="hidden-btn" id="lab-trigger" aria-label="Open Hidden Laboratory">67</button>
+        if (toggleButton && hiddenLabPanel && closeButton) {
+          toggleButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            hiddenLabPanel.style.display = 'block';
+            hiddenLabPanel.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; 
+          });
 
-      <div class="lab" id="lab">
-        <div class="lab-header">
-          <h2>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary)"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-            LABORATORIA // 67
-          </h2>
-          <div class="close" id="lab-close">×</div>
-        </div>
-
-        <div class="lab-content">
-          <p>System Authorization Granted. Welcome to the classified experimental terminal.</p>
-
-          <div class="jarvis-console">
-            <div class="jarvis-title">
-              <span class="jarvis-indicator"></span> JARVIS CORE AI v3.0
-            </div>
-            <div class="chat-log" id="chat-log">
-              <div class="chat-msg system-greeting">
-                [SYS_INIT] Connection established. Ask me anything about Imaad's robotics credentials, AI systems, projects, or how to contact him.
-              </div>
-            </div>
-            <div class="chat-input-row">
-              <input type="text" id="chat-input" class="chat-input" placeholder="Initiate query..." autocomplete="off">
-              <button id="chat-send-btn" class="chat-send-btn" aria-label="Send Query">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-            </div>
-            <div class="chat-chips">
-              <button class="chat-chip" onclick="quickQuery('Tell me about your ROS and robotics background')">Robotics Stack</button>
-              <button class="chat-chip" onclick="quickQuery('What AI projects have you built?')">AI Projects</button>
-              <button class="chat-chip" onclick="quickQuery('How can I contact or hire Imaad?')">Get in Touch</button>
-            </div>
-          </div>
-
-          <div class="lab-hud">
-            <div class="hud-row">
-              <span class="hud-label">COGNITIVE INDEX:</span>
-              <span class="hud-val">89.4%</span>
-            </div>
-            <div class="hud-row">
-              <span class="hud-label">DRIVE SYSTEM:</span>
-              <span class="hud-val">ACTIVE (STANDBY)</span>
-            </div>
-            <div class="hud-row">
-              <span class="hud-label">LOGIC TELEMETRY:</span>
-              <span class="hud-val">NOMINAL // SECURE</span>
-            </div>
-          </div>
-        </div>
-      </div> </div> </div> <script>
-    // 1. Mobile Menu Drawer System
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const navItems = document.querySelectorAll('.nav-item');
-
-    mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-
-    // 2. Secret Lab Panel System
-    const labTrigger = document.getElementById('lab-trigger');
-    const labDrawer = document.getElementById('lab');
-    const labClose = document.getElementById('lab-close');
-    const overlay = document.getElementById('overlay');
-
-    labTrigger.addEventListener('click', () => {
-      labDrawer.classList.add('open');
-      overlay.classList.add('active');
-    });
-
-    [labClose, overlay].forEach(element => {
-      element.addEventListener('click', () => {
-        labDrawer.classList.remove('open');
-        overlay.classList.remove('active');
-      });
-    });
-
-    // 3. Simulated Canvas Particle Background Matrix
-    const canvas = document.getElementById('background-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.5 + 0.5;
-        this.speedY = Math.random() * -0.4 - 0.1;
-        this.alpha = Math.random() * 0.5 + 0.2;
-      }
-      update() {
-        this.y += this.speedY;
-        if (this.y < 0) {
-          this.y = canvas.height;
-          this.x = Math.random() * canvas.width;
+          closeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            hiddenLabPanel.style.display = 'none';
+            hiddenLabPanel.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; 
+          });
         }
-      }
-      draw() {
-        ctx.fillStyle = `rgba(0, 229, 255, ${this.alpha})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < 40; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
       });
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    // 4. JARVIS Module Terminal Conversational Logic
-    const chatLog = document.getElementById('chat-log');
-    const chatInput = document.getElementById('chat-input');
-    const chatSendBtn = document.getElementById('chat-send-btn');
-
-    function executeMessageAppend(msgText, identifier) {
-      const msgBubble = document.createElement('div');
-      msgBubble.classList.add('chat-msg', identifier);
-      msgBubble.innerText = msgText;
-      chatLog.appendChild(msgBubble);
-      chatLog.scrollTop = chatLog.scrollHeight;
-    }
-
-    function quickQuery(queryText) {
-      executeMessageAppend(queryText, 'user');
-      setTimeout(() => {
-        let response = "[JARVIS]: Operational parameters verified. Data arrays loaded successfully.";
-        if (queryText.includes('ROS')) {
-          response = "[JARVIS]: Core automation logs loaded. Expert capabilities map to ROS/ROS2 nodes, sensor matrices (LiDAR, sonar arrays), and autonomous kinematic models.";
-        } else if (queryText.includes('AI')) {
-          response = "[JARVIS]: Artificial Intelligence architectures include local neural nodes, tensor segmentation, localized predictive heuristics, and custom edge vision models.";
-        } else if (queryText.includes('contact')) {
-          response = "[JARVIS]: Link protocol status online. Select the encrypted direct email link or WhatsApp framework arrays outside this drawer layer to transmit credentials.";
-        }
-        executeMessageAppend(response, 'ai');
-      }, 700);
-    }
-
-    chatSendBtn.addEventListener('click', () => {
-      const rawText = chatInput.value.trim();
-      if (!rawText) return;
-      executeMessageAppend(rawText, 'user');
-      chatInput.value = '';
-      setTimeout(() => {
-        executeMessageAppend("[JARVIS]: Telemetry signal registered to system logs. System connection stable.", 'ai');
-      }, 700);
-    });
-
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') chatSendBtn.click();
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
