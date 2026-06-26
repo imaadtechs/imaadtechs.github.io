@@ -917,8 +917,8 @@
               <a href="https://github.com/imaadtechs" target="_blank" rel="noreferrer">
                 GitHub: github.com/imaadtechs
               </a>
-              <a href="https://youtube.com/@lumorixvfxofficial?si=TSC92IapXkmh0Vaw" target="_blank" rel="noreferrer">
-                YouTube: Lumorix VFX Official
+              <a href="https://www.instagram.com/lumorixvfxofficial?igsh=NjYxbTNhamo1dTll" target="_blank" rel="noreferrer">
+                Instagram: Lumorix VFX Official
               </a>
             </div>
           </div>
