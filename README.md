@@ -209,7 +209,7 @@
         color: var(--text-muted);
       }
 
-      /* --- Hero Visual Elements (Interactive Cards - No Image Elements) --- */
+      /* --- Hero Visual Elements --- */
       .hero-visual {
         position: relative;
         display: flex;
@@ -249,6 +249,26 @@
         width: 100%;
         max-width: 380px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Profile Image Styling */
+      .profile-image-container {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 1.5rem;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+      }
+
+      .profile-avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        border: 2px solid var(--bg-surface);
       }
 
       .identity-card h2 {
@@ -345,7 +365,6 @@
         letter-spacing: -0.02em;
       }
 
-      /* About Section Layout */
       .about-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -362,7 +381,6 @@
         line-height: 1.6;
       }
 
-      /* Project Display Engine Matrix */
       .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -420,7 +438,6 @@
         color: var(--text-muted);
       }
 
-      /* Capability Stack Components */
       .skills-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -468,7 +485,7 @@
         color: var(--text-muted);
       }
 
-      /* --- Contact Module Section --- */
+      /* --- Contact Section --- */
       .contact-card {
         background: linear-gradient(135deg, #0d1324 0%, #070a12 100%);
         border: 1px solid rgba(59, 130, 246, 0.15);
@@ -527,7 +544,7 @@
         color: var(--text-muted);
       }
 
-      /* --- Easter Egg Panel System --- */
+      /* --- Easter Egg Panel --- */
       .easter-toggle {
         position: fixed;
         bottom: 1.5rem;
@@ -608,7 +625,7 @@
         display: inline-block;
       }
 
-      /* --- Responsive Breakpoint Adaptation Rules --- */
+      /* --- Responsive Rules --- */
       @media (max-width: 968px) {
         .hero {
           grid-template-columns: 1fr;
@@ -616,25 +633,29 @@
           padding: 3rem 0;
           text-align: center;
         }
-
         .hero-text {
           margin-left: auto;
           margin-right: auto;
         }
-
         .hero-actions {
           justify-content: center;
         }
-
         .hero-visual {
           order: -1;
         }
-
+        .identity-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .signal-list {
+          align-items: flex-start;
+          width: 100%;
+        }
         .skills-layout {
           grid-template-columns: 1fr;
           gap: 3rem;
         }
-
         .contact-card {
           grid-template-columns: 1fr;
           gap: 2.5rem;
@@ -646,21 +667,17 @@
         .site-nav {
           display: none;
         }
-
         .hero-actions {
           flex-direction: column;
           width: 100%;
         }
-
         .button {
           width: 100%;
         }
-
         .hero-metrics {
           grid-template-columns: 1fr;
           gap: 1.25rem;
         }
-
         .floating-note {
           display: none;
         }
@@ -720,6 +737,10 @@
             <div class="orb orb-one"></div>
             <div class="orb orb-two"></div>
             <article class="identity-card">
+              <div class="profile-image-container">
+                <img class="profile-avatar" src="ChatGPT%20Image%20Jun%2030,%202026,%2011_47_54%20AM.png" alt="Imaad Danish Portrait" />
+              </div>
+              
               <p class="card-label">Creator Profile</p>
               <h2>Imaad Danish</h2>
               <p class="role-switch" data-role-switch>
@@ -930,12 +951,7 @@
       </footer>
     </div>
 
-    <button
-      class="easter-toggle"
-      type="button"
-      aria-label="Open hidden lab"
-      data-easter-toggle
-    >
+    <button class="easter-toggle" type="button" aria-label="Open hidden lab" data-easter-toggle>
       67
     </button>
 
@@ -946,29 +962,14 @@
       <p class="eyebrow">Hidden Lab</p>
       <h2>Technologia // 67</h2>
       <p>
-        A tiny secret corner for the people who actually click around. Pure
-        chaos, pure energy.
+        A tiny secret corner for the people who actually click around. Pure chaos, pure energy.
       </p>
       <div class="easter-embed-grid">
         <div class="easter-embed">
-          <iframe
-            width="110"
-            height="200"
-            src="https://www.myinstants.com/instant/67-sound-90775/embed/"
-            frameborder="0"
-            scrolling="no"
-            title="67 soundboard"
-          ></iframe>
+          <iframe width="110" height="200" src="https://www.myinstants.com/instant/67-sound-90775/embed/" frameborder="0" scrolling="no" title="67 soundboard"></iframe>
         </div>
         <div class="easter-embed">
-          <iframe
-            width="110"
-            height="200"
-            src="https://www.myinstants.com/instant/technologia-53863/embed/"
-            frameborder="0"
-            scrolling="no"
-            title="Technologia soundboard"
-          ></iframe>
+          <iframe width="110" height="200" src="https://www.myinstants.com/instant/technologia-53863/embed/" frameborder="0" scrolling="no" title="Technologia soundboard"></iframe>
         </div>
       </div>
     </section>
