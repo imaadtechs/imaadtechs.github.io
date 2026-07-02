@@ -15,14 +15,14 @@
       rel="stylesheet"
     />
     <style>
-      /* --- Core Variable Specifications & Base Resets --- */
+      /* --- Core Variable Specifications & Base Resets (Dark Red Theme) --- */
       :root {
-        --bg-deep: #05070c;
-        --bg-surface: #0d111c;
-        --bg-glass: rgba(13, 17, 28, 0.7);
+        --bg-deep: #0a0505;
+        --bg-surface: #140d0d;
+        --bg-glass: rgba(20, 13, 13, 0.7);
         --border-subtle: rgba(255, 255, 255, 0.08);
-        --accent-glow: #2563eb;
-        --accent-light: #60a5fa;
+        --accent-glow: #dc2626; /* Dark Red Accent */
+        --accent-light: #f87171;
         --text-primary: #f8fafc;
         --text-muted: #94a3b8;
         --font-display: 'Space Grotesk', sans-serif;
@@ -135,7 +135,7 @@
 
       .accent {
         color: transparent;
-        background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);
+        background: linear-gradient(135deg, #dc2626 0%, #fca5a5 100%);
         -webkit-background-clip: text;
         background-clip: text;
       }
@@ -168,12 +168,12 @@
       .button-primary {
         background: var(--accent-glow);
         color: #fff;
-        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+        box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
       }
 
       .button-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(37, 99, 235, 0.4);
+        box-shadow: 0 6px 24px rgba(220, 38, 38, 0.4);
       }
 
       .button-secondary {
@@ -236,7 +236,7 @@
       .orb-two {
         width: 220px;
         height: 220px;
-        background: #a855f7;
+        background: #991b1b;
         bottom: -10%;
         right: -10%;
       }
@@ -251,15 +251,14 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       }
 
-      /* Profile Image Styling */
       .profile-image-container {
         width: 110px;
         height: 110px;
         margin-bottom: 1.5rem;
         border-radius: 50%;
         padding: 3px;
-        background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
-        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+        background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
       }
 
       .profile-avatar {
@@ -397,7 +396,7 @@
       }
 
       .project-card:hover {
-        border-color: rgba(59, 130, 246, 0.4);
+        border-color: rgba(220, 38, 38, 0.4);
         transform: translateY(-4px);
       }
 
@@ -438,6 +437,7 @@
         color: var(--text-muted);
       }
 
+      /* Capability Stack Components */
       .skills-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -485,10 +485,10 @@
         color: var(--text-muted);
       }
 
-      /* --- Contact Section --- */
+      /* --- Contact Module Section --- */
       .contact-card {
-        background: linear-gradient(135deg, #0d1324 0%, #070a12 100%);
-        border: 1px solid rgba(59, 130, 246, 0.15);
+        background: linear-gradient(135deg, #1f0a0a 0%, #0a0505 100%);
+        border: 1px solid rgba(220, 38, 38, 0.2);
         border-radius: 24px;
         padding: 3.5rem;
         display: grid;
@@ -529,7 +529,7 @@
       }
 
       .contact-links a:hover {
-        background: rgba(37, 99, 235, 0.08);
+        background: rgba(220, 38, 38, 0.08);
         border-color: var(--accent-glow);
         color: var(--accent-light);
         transform: translateX(4px);
@@ -544,7 +544,7 @@
         color: var(--text-muted);
       }
 
-      /* --- Easter Egg Panel --- */
+      /* --- Easter Egg Panel System --- */
       .easter-toggle {
         position: fixed;
         bottom: 1.5rem;
@@ -577,7 +577,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(3, 5, 10, 0.98);
+        background: rgba(10, 5, 5, 0.98);
         z-index: 10000;
         padding: 3rem 1.5rem;
         overflow-y: auto;
@@ -625,7 +625,7 @@
         display: inline-block;
       }
 
-      /* --- Responsive Rules --- */
+      /* --- Responsive Breakpoint Adaptation Rules --- */
       @media (max-width: 968px) {
         .hero {
           grid-template-columns: 1fr;
@@ -633,29 +633,36 @@
           padding: 3rem 0;
           text-align: center;
         }
+
         .hero-text {
           margin-left: auto;
           margin-right: auto;
         }
+
         .hero-actions {
           justify-content: center;
         }
+
         .hero-visual {
           order: -1;
         }
+
         .identity-card {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
+
         .signal-list {
           align-items: flex-start;
           width: 100%;
         }
+
         .skills-layout {
           grid-template-columns: 1fr;
           gap: 3rem;
         }
+
         .contact-card {
           grid-template-columns: 1fr;
           gap: 2.5rem;
@@ -667,17 +674,21 @@
         .site-nav {
           display: none;
         }
+
         .hero-actions {
           flex-direction: column;
           width: 100%;
         }
+
         .button {
           width: 100%;
         }
+
         .hero-metrics {
           grid-template-columns: 1fr;
           gap: 1.25rem;
         }
+
         .floating-note {
           display: none;
         }
@@ -738,9 +749,8 @@
             <div class="orb orb-two"></div>
             <article class="identity-card">
               <div class="profile-image-container">
-                <img class="profile-avatar" src="ChatGPT%20Image%20Jun%2030,%202026,%2011_47_54%20AM.png" alt="Imaad Danish Portrait" />
+                <img class="profile-avatar" src="ChatGPT Image Jun 30, 2026, 11_47_54 AM.png" alt="Imaad Danish Portrait" />
               </div>
-              
               <p class="card-label">Creator Profile</p>
               <h2>Imaad Danish</h2>
               <p class="role-switch" data-role-switch>
@@ -770,23 +780,13 @@
           </div>
           <div class="about-grid">
             <article class="glass-card reveal">
-              <p>
-                I thrive at the intersection of aesthetic design and programming logic. 
-                Using post-production software alongside code execution layers, I construct complex environments, 
-                interactive logic, and custom application designs.
-              </p>
+              <p>I thrive at the intersection of aesthetic design and programming logic. Using post-production software alongside code execution layers, I construct complex environments, interactive logic, and custom application designs.</p>
             </article>
             <article class="glass-card reveal">
-              <p>
-                From rendering cinematic motion work on Lumorix VFX to building front-end interfaces and 
-                system scripts, I love making media feel dynamic, responsive, and fully optimized.
-              </p>
+              <p>From rendering cinematic motion work on Lumorix VFX to building front-end interfaces and system scripts, I love making media feel dynamic, responsive, and fully optimized.</p>
             </article>
             <article class="glass-card reveal">
-              <p>
-                Whether managing deep render pipelines or cross-compiling production logic, I prioritize 
-                clean infrastructure architecture, modular systems design, and fluid scalability.
-              </p>
+              <p>Whether managing deep render pipelines or cross-compiling production logic, I prioritize clean infrastructure architecture, modular systems design, and fluid scalability.</p>
             </article>
           </div>
         </section>
@@ -800,9 +800,7 @@
             <article class="project-card reveal">
               <span class="project-index">01</span>
               <h3>Lumorix VFX Direction</h3>
-              <p>
-                Cinematic video production using cutting-edge simulation, motion tracking, compositing, and visual grading tools.
-              </p>
+              <p>Cinematic video production using cutting-edge simulation, motion tracking, compositing, and visual grading tools.</p>
               <div class="project-tags">
                 <span>VFX Pipeline</span>
                 <span>Compositing</span>
@@ -812,9 +810,7 @@
             <article class="project-card reveal">
               <span class="project-index">02</span>
               <h3>Creative Web Frameworks</h3>
-              <p>
-                Developing interactive web infrastructure tailored for media rendering, low latency, and modern lookbooks.
-              </p>
+              <p>Developing interactive web infrastructure tailored for media rendering, low latency, and modern lookbooks.</p>
               <div class="project-tags">
                 <span>HTML5 / CSS3</span>
                 <span>UI Engineering</span>
@@ -824,9 +820,7 @@
             <article class="project-card reveal">
               <span class="project-index">03</span>
               <h3>Cross-Platform System Scripts</h3>
-              <p>
-                Automated background systems designed to streamline desktop logic, file rendering loops, and environment tasks.
-              </p>
+              <p>Automated background systems designed to streamline desktop logic, file rendering loops, and environment tasks.</p>
               <div class="project-tags">
                 <span>Automation</span>
                 <span>Script Control</span>
@@ -836,9 +830,7 @@
             <article class="project-card reveal">
               <span class="project-index">04</span>
               <h3>Application Interface Design</h3>
-              <p>
-                Building user interfaces with adaptive layouts that balance media density with intuitive user journeys.
-              </p>
+              <p>Building user interfaces with adaptive layouts that balance media density with intuitive user journeys.</p>
               <div class="project-tags">
                 <span>UX Architecture</span>
                 <span>Responsive Code</span>
@@ -848,9 +840,7 @@
             <article class="project-card reveal">
               <span class="project-index">05</span>
               <h3>Asset Management Tooling</h3>
-              <p>
-                Designing custom script routines to track, compress, and dispatch lightweight production-grade source assets.
-              </p>
+              <p>Designing custom script routines to track, compress, and dispatch lightweight production-grade source assets.</p>
               <div class="project-tags">
                 <span>Optimization</span>
                 <span>Data Pipelines</span>
@@ -860,9 +850,7 @@
             <article class="project-card reveal">
               <span class="project-index">06</span>
               <h3>Digital Production Architecture</h3>
-              <p>
-                Deploying responsive environments, production engines, and custom-tailored environments for multi-screen configurations.
-              </p>
+              <p>Deploying responsive environments, production engines, and custom-tailored environments for multi-screen configurations.</p>
               <div class="project-tags">
                 <span>Cross-Platform</span>
                 <span>Render Architecture</span>
@@ -895,27 +883,19 @@
             <div class="skills-panels reveal">
               <article class="skill-panel">
                 <h3>Visual Thinking</h3>
-                <p>
-                  I shape raw concepts into high-fidelity compositions that engage users and balance aesthetic color spaces.
-                </p>
+                <p>I shape raw concepts into high-fidelity compositions that engage users and balance aesthetic color spaces.</p>
               </article>
               <article class="skill-panel">
                 <h3>Structural Code</h3>
-                <p>
-                  I build modular software programs that give web systems structural safety, reliable performance, and smooth logic response.
-                </p>
+                <p>I build modular software programs that give web systems structural safety, reliable performance, and smooth logic response.</p>
               </article>
               <article class="skill-panel">
                 <h3>Unified Platform Deployment</h3>
-                <p>
-                  I design universally accessible code targets across mobile screens, notebooks, and workstations without display failure.
-                </p>
+                <p>I design universally accessible code targets across mobile screens, notebooks, and workstations without display failure.</p>
               </article>
               <article class="skill-panel">
                 <h3>Next Frontier</h3>
-                <p>
-                  My current focus is integrating serverless render execution pipelines with web layouts to scale real-time visual outputs.
-                </p>
+                <p>My current focus is integrating serverless render execution pipelines with web layouts to scale real-time visual outputs.</p>
               </article>
             </div>
           </div>
@@ -951,19 +931,13 @@
       </footer>
     </div>
 
-    <button class="easter-toggle" type="button" aria-label="Open hidden lab" data-easter-toggle>
-      67
-    </button>
+    <button class="easter-toggle" type="button" aria-label="Open hidden lab" data-easter-toggle>67</button>
 
     <section class="easter-panel" aria-hidden="true" data-easter-panel>
-      <button class="easter-close" type="button" aria-label="Close hidden lab" data-easter-close>
-        ×
-      </button>
+      <button class="easter-close" type="button" aria-label="Close hidden lab" data-easter-close>×</button>
       <p class="eyebrow">Hidden Lab</p>
       <h2>Technologia // 67</h2>
-      <p>
-        A tiny secret corner for the people who actually click around. Pure chaos, pure energy.
-      </p>
+      <p>A tiny secret corner for the people who actually click around. Pure chaos, pure energy.</p>
       <div class="easter-embed-grid">
         <div class="easter-embed">
           <iframe width="110" height="200" src="https://www.myinstants.com/instant/67-sound-90775/embed/" frameborder="0" scrolling="no" title="67 soundboard"></iframe>
